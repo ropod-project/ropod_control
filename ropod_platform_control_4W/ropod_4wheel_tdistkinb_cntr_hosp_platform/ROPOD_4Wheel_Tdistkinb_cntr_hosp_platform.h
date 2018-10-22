@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform'.
 //
-// Model version                  : 1.281
+// Model version                  : 1.282
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Oct 10 12:52:31 2018
+// C/C++ source code generated on : Mon Oct 22 11:18:31 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -126,7 +126,7 @@ typedef struct {
   real_T QQ[81];
   real_T RR[81];
   real_T b_A[81];
-  real_T P[64];
+  real_T M[64];
   real_T Gtl[45];                      // '<S44>/Gl_matrices'
   real_T Gl[45];                       // '<S44>/Gl_matrices'
   real_T SFunction[40];                // '<S28>/S-Function'
@@ -135,7 +135,10 @@ typedef struct {
   real_T SFunction_m[40];              // '<S31>/S-Function'
   real_T rtb_Gtl_m[27];
   real_T b_A_c[27];
-  real_T rtb_TmpSignalConversionAtSFun_k[24];
+  real_T G[24];
+  real_T y[24];
+  real_T U_k[24];
+  real_T b_A_cx[24];
   real_T lam[21];
   real_T b_b[21];
   real_T cTol[21];
@@ -145,21 +148,24 @@ typedef struct {
   real_T Rhs[18];
   int16_T K[64];
   real_T dv1[15];
-  real_T f[9];
+  real_T V[9];
   real_T x[9];
   real_T r[9];
   real_T AcRow[9];
-  real_T Ac_c[9];
+  real_T Ac_b[9];
   real_T tau[9];
   real_T work[9];
-  real_T work_b[9];
+  real_T work_p[9];
+  real_T Vf[9];
   real_T e[9];
   char_T cv0[67];
   char_T cv1[66];
   char_T cv2[65];
   char_T cv3[64];
-  real_T Switch2_k[8];                 // '<S20>/Switch2'
+  real_T r_w[8];
+  real_T Switch2[8];                   // '<S20>/Switch2'
   real_T Product9[8];                  // '<S82>/Product9'
+  real_T work_c[8];
   char_T cv4[63];
   char_T cv5[62];
   char_T cv6[60];
@@ -167,16 +173,26 @@ typedef struct {
   char_T cv8[56];
   char_T cv9[55];
   char_T cv10[54];
+  real_T dv2[6];
+  real_T dv3[6];
   SL_Bus_ROPOD_4Wheel_Tdistkinb_cn_Twist_zi6ye9 In1;// '<S18>/In1'
   SL_Bus_ROPOD_4Wheel_Tdistkinb_cn_Twist_zi6ye9 b_varargout_2;
   int16_T iC[21];
   int16_T iA[21];
-  real_T varargin_1_p[5];
+  real_T varargin_1_f[5];
+  real_T varargin_1_g[5];
+  real_T d[4];
+  real_T Switch[4];                    // '<S20>/Switch'
+  real_T dv4[4];
+  real_T dv5[4];
   real_T s[4];
   real_T Sum_pp[3];                    // '<S43>/Sum'
   real_T Diff[3];                      // '<S46>/Diff'
-  real_T dv2[3];
-  real_T work_c[3];
+  real_T dv6[3];
+  real_T b_s[3];
+  real_T e_g[3];
+  real_T work_m[3];
+  real_T TmpSignalConversionAtFilterDiff[2];
   real_T DigitalClock;                 // '<S10>/Digital Clock'
   real_T EnabledDelay;                 // '<S10>/Enabled Delay'
   real_T Gain1;                        // '<S10>/Gain1'
@@ -317,28 +333,14 @@ typedef struct {
   real_T t9;
   real_T t10;
   real_T t11;
-  real_T t15;
-  real_T t17;
-  real_T t18;
-  real_T t22;
+  real_T t16;
+  real_T t19;
+  real_T t23;
   real_T t24;
-  real_T t25;
-  real_T t26;
   real_T t27;
-  real_T t30;
-  real_T t31;
   real_T t32;
-  real_T t33;
-  real_T t34;
   real_T t35;
-  real_T t38;
-  real_T t39;
   real_T t40;
-  real_T t41;
-  real_T t42;
-  real_T t48;
-  real_T t49;
-  real_T t50;
   real_T Product1_i;                   // '<S53>/Product1'
   real_T Sum_by;                       // '<S169>/Sum'
   real_T Sum_b;                        // '<S159>/Sum'
@@ -347,7 +349,7 @@ typedef struct {
   real_T Sum_oj;                       // '<S129>/Sum'
   real_T Sum_h;                        // '<S119>/Sum'
   real_T Switch2_j;                    // '<S10>/Switch2'
-  real_T Switch1_f;                    // '<S10>/Switch1'
+  real_T Switch1_n;                    // '<S10>/Switch1'
   real_T Switch_j;                     // '<S10>/Switch'
   real_T sampletime_i;                 // '<S35>/sample time'
   real_T sampletime_d;                 // '<S34>/sample time'
@@ -361,7 +363,7 @@ typedef struct {
   real_T LL_zero_fhz;                  // '<S6>/Get Parameter12'
   real_T I_freq_hz;                    // '<S6>/Get Parameter11'
   real_T LPF_fhz;                      // '<S6>/Get Parameter14'
-  real_T FilterDifferentiatorTF_m;     // '<S67>/Filter Differentiator TF'
+  real_T FilterDifferentiatorTF_f;     // '<S57>/Filter Differentiator TF'
   real_T FilterDifferentiatorTF_pe;    // '<S168>/Filter Differentiator TF'
   real_T DOut_i;                       // '<S159>/DOut'
   real_T DOut_g;                       // '<S156>/DOut'
@@ -380,7 +382,7 @@ typedef struct {
   real_T Yk1_k;                        // '<S34>/Delay Input2'
   real_T Switch2_o;                    // '<S37>/Switch2'
   real_T Yk1;                          // '<S33>/Delay Input2'
-  real_T Switch2;                      // '<S36>/Switch2'
+  real_T Switch2_g;                    // '<S36>/Switch2'
   real_T FilterDifferentiatorTF_tmp_kx;
   real_T FilterDifferentiatorTF_tmp_o;
   real_T FilterDifferentiatorTF_tmp_m;
@@ -388,7 +390,6 @@ typedef struct {
   real_T FilterDifferentiatorTF_tmp_l;
   real_T FilterDifferentiatorTF_tmp_i;
   real_T FilterDifferentiatorTF_tmp_at;
-  real_T FilterDifferentiatorTF_tmp_n;
   real_T FilterDifferentiatorTF_tmp_h;
   real_T FilterDifferentiatorTF_tmp_a;
   real_T Integrator_h;
@@ -397,20 +398,29 @@ typedef struct {
   real_T Integrator_k1;
   real_T Integrator_e;
   real_T Integrator_l;
+  real_T rtb_Sum_pp_p;
   real_T rtb_TSamp_idx_0;
   real_T rtb_TSamp_idx_1;
   real_T rtb_TSamp_idx_2;
-  real_T rtb_Switch_idx_0;
-  real_T rtb_Switch_idx_1;
-  real_T rtb_Switch_idx_2;
-  real_T rtb_Switch_idx_3;
-  real_T t10_tmp;
+  real_T t15_tmp;
+  real_T t8_tmp;
   real_T t14_tmp;
+  real_T t15_tmp_l;
+  real_T d0;
   real_T t17_tmp;
-  real_T t30_tmp;
-  real_T t31_tmp;
-  real_T t34_tmp;
-  real_T rtb_TmpSignalConversionAtSFun_g;
+  real_T t18_tmp;
+  real_T t22_tmp;
+  real_T t23_tmp;
+  real_T d1;
+  real_T d2;
+  real_T t33_tmp;
+  real_T d3;
+  real_T d4;
+  real_T t38_tmp;
+  real_T d5;
+  real_T d6;
+  real_T d7;
+  real_T d8;
   real_T Integrator_e_tmp;
   real_T rtb_DOut_f_tmp;
   real_T Integrator_k1_tmp;
@@ -419,12 +429,13 @@ typedef struct {
   real_T rtb_DOut_g_tmp;
   real_T Integrator_b_tmp;
   real_T Integrator_h_tmp;
+  real_T t19_tmp;
   real_T absxk;
   real_T Xnorm0;
   real_T cMin;
   real_T cVal;
   real_T t;
-  real_T d0;
+  real_T d9;
   real_T b;
   real_T b_atmp;
   real_T xnorm;
@@ -440,44 +451,64 @@ typedef struct {
   real_T absa;
   real_T absb;
   real_T scale;
+  real_T nrm_j;
+  real_T rt_d;
+  real_T ztest_g;
+  real_T smm1_l;
+  real_T emm1_d;
+  real_T sqds_d;
+  real_T shift_l;
+  real_T roe_o;
+  real_T absa_b;
+  real_T absb_n;
+  real_T scale_b;
   real_T ads;
   real_T bds;
-  real_T scale_g;
-  real_T absxk_m;
-  real_T t_n;
-  real_T scale_p;
-  real_T absxk_l;
-  real_T t_j;
-  real_T c;
+  real_T scale_l;
+  real_T absxk_h;
+  real_T t_b;
   real_T scale_d;
+  real_T absxk_e;
+  real_T t_bj;
+  real_T scale_j;
+  real_T absxk_f;
+  real_T scale_a;
+  real_T absxk_j;
+  real_T c;
+  real_T scale_jz;
   int32_T ECAT_Interface_i;            // '<S5>/ECAT_Interface'
-  int32_T k;
+  int32_T r_o;
+  int32_T vcol;
+  int32_T ar;
+  int32_T ia;
+  int32_T b_n;
+  int32_T ib;
+  int32_T b_ic;
+  int32_T c_j;
   int32_T i0;
-  int32_T i1;
-  int32_T rtb_Gtl_tmp;
-  int32_T k_g;
+  int32_T k;
   int32_T ixstart;
-  int32_T i2;
+  int32_T i1;
   int32_T kDrop_tmp;
   int32_T U_tmp;
   int32_T i;
   int32_T j;
+  int32_T i2;
   int32_T i3;
-  int32_T i4;
   int32_T d_i;
   int32_T itau;
   int32_T iaii;
   int32_T lastv;
   int32_T lastc;
   int32_T coltop;
-  int32_T ia;
+  int32_T ia_i;
   int32_T i_i;
-  int32_T i_l;
+  int32_T i_o;
   int32_T knt;
-  int32_T lastv_d;
-  int32_T lastc_d;
-  int32_T coltop_l;
-  int32_T ia_o;
+  int32_T lastv_n;
+  int32_T lastc_m;
+  int32_T coltop_c;
+  int32_T ia_m;
   int32_T q;
   int32_T qq;
   uint16_T BitwiseOperator1;           // '<S21>/Bitwise Operator1'
@@ -863,8 +894,8 @@ struct P_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_T_ {
   real_T Gain4_Gain;                   // Expression: -1
                                        //  Referenced by: '<S10>/Gain4'
 
-  real_T Constant_Value_n[8];          // Expression: [1 1 1 1 1 1 1 1]
-                                       //  Referenced by: '<Root>/Constant'
+  real_T Constant1_Value_n[8];         // Expression: [1 1 1 1 1 1 1 1]
+                                       //  Referenced by: '<Root>/Constant1'
 
   real_T Constant4_Value;              // Expression: 1
                                        //  Referenced by: '<S92>/Constant4'
@@ -875,7 +906,7 @@ struct P_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_T_ {
   real_T Constant_Value_o;             // Expression: 0
                                        //  Referenced by: '<S92>/Constant'
 
-  real_T Constant_Value_nr;            // Expression: 1
+  real_T Constant_Value_n;             // Expression: 1
                                        //  Referenced by: '<S98>/Constant'
 
   real_T Constant5_Value;              // Expression: 0
@@ -1826,7 +1857,7 @@ struct P_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_T_ {
   real_T Constant_Value_f2;            // Expression: 0
                                        //  Referenced by: '<S3>/Constant'
 
-  real_T Constant1_Value_n;            // Expression: 0
+  real_T Constant1_Value_nl;           // Expression: 0
                                        //  Referenced by: '<S3>/Constant1'
 
   real_T Constant2_Value_a;            // Expression: 0
@@ -2137,7 +2168,7 @@ extern "C" {
 //  '<S10>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Subscriber vel commands1'
 //  '<S11>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/platform vel cntr'
 //  '<S12>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/wheel vel cntr'
-//  '<S13>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Odometry and Measurement model 4SW/Jqwl_matrix'
+//  '<S13>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Odometry and Measurement model 4SW/Jqwl_numeric'
 //  '<S14>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Odometry and Measurement model 4SW/pos_rot_matrix'
 //  '<S15>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Odometry publisher/Blank Message'
 //  '<S16>'  : 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform/Odometry publisher/Publish'

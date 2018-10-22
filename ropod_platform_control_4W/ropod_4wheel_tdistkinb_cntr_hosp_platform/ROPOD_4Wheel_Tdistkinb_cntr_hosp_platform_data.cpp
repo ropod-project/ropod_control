@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform'.
 //
-// Model version                  : 1.281
+// Model version                  : 1.282
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Oct 10 12:52:31 2018
+// C/C++ source code generated on : Mon Oct 22 11:18:31 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -478,7 +478,7 @@ P_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_T
   -1.0,
 
   // Expression: [1 1 1 1 1 1 1 1]
-  //  Referenced by: '<Root>/Constant'
+  //  Referenced by: '<Root>/Constant1'
 
   { 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 },
 

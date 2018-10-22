@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform'.
 //
-// Model version                  : 1.281
+// Model version                  : 1.282
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Wed Oct 10 12:52:31 2018
+// C/C++ source code generated on : Mon Oct 22 11:18:31 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -62,27 +62,57 @@ RT_MODEL_ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_T *const
   &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M_;
 
 // Forward declaration for local functions
-static real_T ROPOD_4Wheel_Tdistkinb_cn_xnrm2(int32_T n, const real_T x[27],
+static real_T ROPOD_4Wheel_Tdistkinb_cn_xnrm2(int32_T n, const real_T x[24],
   int32_T ix0);
-static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_n(int32_T n, const real_T x[9],
+static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_c(int32_T n, const real_T x[3],
   int32_T ix0);
-static void ROPOD_4Wheel_Tdistkinb_xaxpy_n2(int32_T n, real_T a, const real_T x
-  [3], int32_T ix0, real_T y[27], int32_T iy0);
-static void ROPOD_4Wheel_Tdistkinb__xaxpy_n(int32_T n, real_T a, const real_T x
-  [27], int32_T ix0, real_T y[3], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb_xaxpy_by(int32_T n, real_T a, const real_T x
+  [8], int32_T ix0, real_T y[24], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb__xaxpy_b(int32_T n, real_T a, const real_T x
+  [24], int32_T ix0, real_T y[8], int32_T iy0);
+static real_T ROPOD_4Wheel_Tdistkinb_cn_xdotc(int32_T n, const real_T x[24],
+  int32_T ix0, const real_T y[24], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb_cn_xaxpy(int32_T n, real_T a, int32_T ix0,
+  real_T y[24], int32_T iy0);
+static real_T ROPOD_4Wheel_Tdistkinb__xdotc_d(int32_T n, const real_T x[9],
+  int32_T ix0, const real_T y[9], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkin_xaxpy_byo(int32_T n, real_T a, int32_T ix0,
+  real_T y[9], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb_cn_xscal(real_T a, real_T x[24], int32_T ix0);
+static void ROPOD_4Wheel_Tdistkinb__xscal_a(real_T a, real_T x[9], int32_T ix0);
+static void ROPOD_4Wheel_Tdistkinb_cn_xswap(real_T x[9], int32_T ix0, int32_T
+  iy0);
+static void ROPOD_4Wheel_Tdistkinb__xswap_j(real_T x[24], int32_T ix0, int32_T
+  iy0);
 static void ROPOD_4Wheel_Tdistkinb_cn_xrotg(real_T *a, real_T *b, real_T *c,
   real_T *s);
-static real_T ROPOD_4Wheel_Tdistkinb_cn_xdotc(int32_T n, const real_T x[27],
+static void ROPOD_4Wheel_Tdistkinb_cnt_xrot(real_T x[9], int32_T ix0, int32_T
+  iy0, real_T c, real_T s);
+static void ROPOD_4Wheel_Tdistkinb_c_xrot_j(real_T x[24], int32_T ix0, int32_T
+  iy0, real_T c, real_T s);
+static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[24], real_T U[24],
+  real_T s[3], real_T V[9]);
+static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_n(int32_T n, const real_T x[27],
+  int32_T ix0);
+static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[9],
+  int32_T ix0);
+static void ROPOD_4Wheel_Tdistkin_xaxpy_n2l(int32_T n, real_T a, const real_T x
+  [3], int32_T ix0, real_T y[27], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb_xaxpy_n2(int32_T n, real_T a, const real_T x
+  [27], int32_T ix0, real_T y[3], int32_T iy0);
+static void ROPOD_4Wheel_Tdistkinb__xrotg_o(real_T *a, real_T *b, real_T *c,
+  real_T *s);
+static real_T ROPOD_4Wheel_Tdistkinb__xdotc_i(int32_T n, const real_T x[27],
   int32_T ix0, const real_T y[27], int32_T iy0);
-static void ROPOD_4Wheel_Tdistkinb_cn_xaxpy(int32_T n, real_T a, int32_T ix0,
+static void ROPOD_4Wheel_Tdistkinb__xaxpy_n(int32_T n, real_T a, int32_T ix0,
   real_T y[27], int32_T iy0);
-static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3]);
+static void ROPOD_4Wheel_Tdistkinb_cn_svd_g(const real_T A[27], real_T U[3]);
 static void ROPOD_4Wheel_Tdis_Unconstrained(const real_T Hinv[81], const real_T
   f[9], real_T x[9]);
 static real_T ROPOD_4Wheel_Tdistkinb_cnt_norm(const real_T x[9]);
 static void ROPOD_4Wheel_Tdistkinb_cntr_abs(const real_T x[9], real_T y[9]);
 static void ROPOD_4Wheel_Tdistkinb_cn_abs_d(const real_T x[21], real_T y[21]);
-static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[81],
+static real_T ROPOD_4Wheel_Tdistkin_xnrm2_ngs(int32_T n, const real_T x[81],
   int32_T ix0);
 static void ROPOD_4Wheel_Tdistkinb_cn_xgemv(int32_T m, int32_T n, const real_T
   A[81], int32_T ia0, const real_T x[81], int32_T ix0, real_T y[9]);
@@ -157,82 +187,87 @@ void ROPOD_4Wheel_Tdi_MATLABFunction(real_T rtu_w, real_T rtu_tau, real_T *rty_g
   *rty_g = wt;
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static real_T ROPOD_4Wheel_Tdistkinb_cn_xnrm2(int32_T n, const real_T x[27],
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static real_T ROPOD_4Wheel_Tdistkinb_cn_xnrm2(int32_T n, const real_T x[24],
   int32_T ix0)
 {
   real_T y;
   int32_T kend;
+  real_T t;
   int32_T k;
   y = 0.0;
-  if (n == 1) {
-    y = fabs(x[ix0 - 1]);
-  } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p =
-      3.3121686421112381E-170;
-    kend = (ix0 + n) - 1;
-    for (k = ix0; k <= kend; k++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_l = fabs(x[k - 1]);
-      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_l >
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p /
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_l;
-        y = y * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j + 1.0;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_l;
-      } else {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_l /
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p;
-        y += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_j;
+  if (!(n < 1)) {
+    if (n == 1) {
+      y = fabs(x[ix0 - 1]);
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j =
+        3.3121686421112381E-170;
+      kend = (ix0 + n) - 1;
+      for (k = ix0; k <= kend; k++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_f = fabs(x[k - 1]);
+        if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_f >
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j) {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j /
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_f;
+          y = y * t * t + 1.0;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_f;
+        } else {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_f /
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j;
+          y += t * t;
+        }
       }
-    }
 
-    y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_p * sqrt(y);
+      y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_j * sqrt(y);
+    }
   }
 
   return y;
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_n(int32_T n, const real_T x[9],
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_c(int32_T n, const real_T x[3],
   int32_T ix0)
 {
   real_T y;
   int32_T kend;
+  real_T t;
   int32_T k;
   y = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g = 3.3121686421112381E-170;
-  kend = (ix0 + n) - 1;
-  for (k = ix0; k <= kend; k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_m = fabs(x[k - 1]);
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_m >
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_m;
-      y = y * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n + 1.0;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_m;
+  if (!(n < 1)) {
+    if (n == 1) {
+      y = fabs(x[ix0 - 1]);
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_m /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g;
-      y += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_n;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a =
+        3.3121686421112381E-170;
+      kend = (ix0 + n) - 1;
+      for (k = ix0; k <= kend; k++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_j = fabs(x[k - 1]);
+        if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_j >
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a) {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a /
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_j;
+          y = y * t * t + 1.0;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_j;
+        } else {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_j /
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a;
+          y += t * t;
+        }
+      }
+
+      y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_a * sqrt(y);
     }
   }
 
-  return ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_g * sqrt(y);
+  return y;
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static void ROPOD_4Wheel_Tdistkinb_xaxpy_n2(int32_T n, real_T a, const real_T x
-  [3], int32_T ix0, real_T y[27], int32_T iy0)
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_xaxpy_by(int32_T n, real_T a, const real_T x
+  [8], int32_T ix0, real_T y[24], int32_T iy0)
 {
   int32_T ix;
   int32_T iy;
@@ -248,9 +283,9 @@ static void ROPOD_4Wheel_Tdistkinb_xaxpy_n2(int32_T n, real_T a, const real_T x
   }
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static void ROPOD_4Wheel_Tdistkinb__xaxpy_n(int32_T n, real_T a, const real_T x
-  [27], int32_T ix0, real_T y[3], int32_T iy0)
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb__xaxpy_b(int32_T n, real_T a, const real_T x
+  [24], int32_T ix0, real_T y[8], int32_T iy0)
 {
   int32_T ix;
   int32_T iy;
@@ -266,10 +301,153 @@ static void ROPOD_4Wheel_Tdistkinb__xaxpy_n(int32_T n, real_T a, const real_T x
   }
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static real_T ROPOD_4Wheel_Tdistkinb_cn_xdotc(int32_T n, const real_T x[24],
+  int32_T ix0, const real_T y[24], int32_T iy0)
+{
+  real_T d;
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  d = 0.0;
+  if (!(n < 1)) {
+    ix = ix0;
+    iy = iy0;
+    for (k = 1; k <= n; k++) {
+      d += x[ix - 1] * y[iy - 1];
+      ix++;
+      iy++;
+    }
+  }
+
+  return d;
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_cn_xaxpy(int32_T n, real_T a, int32_T ix0,
+  real_T y[24], int32_T iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  if (!((n < 1) || (a == 0.0))) {
+    ix = ix0 - 1;
+    iy = iy0 - 1;
+    for (k = 0; k < n; k++) {
+      y[iy] += a * y[ix];
+      ix++;
+      iy++;
+    }
+  }
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static real_T ROPOD_4Wheel_Tdistkinb__xdotc_d(int32_T n, const real_T x[9],
+  int32_T ix0, const real_T y[9], int32_T iy0)
+{
+  real_T d;
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  d = 0.0;
+  if (!(n < 1)) {
+    ix = ix0;
+    iy = iy0;
+    for (k = 1; k <= n; k++) {
+      d += x[ix - 1] * y[iy - 1];
+      ix++;
+      iy++;
+    }
+  }
+
+  return d;
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkin_xaxpy_byo(int32_T n, real_T a, int32_T ix0,
+  real_T y[9], int32_T iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  if (!((n < 1) || (a == 0.0))) {
+    ix = ix0 - 1;
+    iy = iy0 - 1;
+    for (k = 0; k < n; k++) {
+      y[iy] += a * y[ix];
+      ix++;
+      iy++;
+    }
+  }
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_cn_xscal(real_T a, real_T x[24], int32_T ix0)
+{
+  int32_T k;
+  for (k = ix0; k <= ix0 + 7; k++) {
+    x[k - 1] *= a;
+  }
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb__xscal_a(real_T a, real_T x[9], int32_T ix0)
+{
+  int32_T k;
+  for (k = ix0; k <= ix0 + 2; k++) {
+    x[k - 1] *= a;
+  }
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_cn_xswap(real_T x[9], int32_T ix0, int32_T
+  iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  real_T temp;
+  ix = ix0 - 1;
+  iy = iy0 - 1;
+  temp = x[ix];
+  x[ix] = x[iy];
+  x[iy] = temp;
+  ix++;
+  iy++;
+  temp = x[ix];
+  x[ix] = x[iy];
+  x[iy] = temp;
+  ix++;
+  iy++;
+  temp = x[ix];
+  x[ix] = x[iy];
+  x[iy] = temp;
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb__xswap_j(real_T x[24], int32_T ix0, int32_T
+  iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  real_T temp;
+  int32_T k;
+  ix = ix0 - 1;
+  iy = iy0 - 1;
+  for (k = 0; k < 8; k++) {
+    temp = x[ix];
+    x[ix] = x[iy];
+    x[iy] = temp;
+    ix++;
+    iy++;
+  }
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
 static void ROPOD_4Wheel_Tdistkinb_cn_xrotg(real_T *a, real_T *b, real_T *c,
   real_T *s)
 {
+  real_T ads;
+  real_T bds;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.roe = *b;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa = fabs(*a);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb = fabs(*b);
@@ -286,17 +464,12 @@ static void ROPOD_4Wheel_Tdistkinb_cn_xrotg(real_T *a, real_T *b, real_T *c,
     *c = 1.0;
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa /
+    ads = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb /
+    bds = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale *= sqrt
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads *
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds *
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale *= sqrt(ads * ads + bds *
+      bds);
     if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.roe < 0.0) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale =
         -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale;
@@ -318,476 +491,416 @@ static void ROPOD_4Wheel_Tdistkinb_cn_xrotg(real_T *a, real_T *b, real_T *c,
   *b = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa;
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static real_T ROPOD_4Wheel_Tdistkinb_cn_xdotc(int32_T n, const real_T x[27],
-  int32_T ix0, const real_T y[27], int32_T iy0)
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_cnt_xrot(real_T x[9], int32_T ix0, int32_T
+  iy0, real_T c, real_T s)
 {
-  real_T d;
   int32_T ix;
   int32_T iy;
+  real_T temp;
+  ix = ix0 - 1;
+  iy = iy0 - 1;
+  temp = c * x[ix] + s * x[iy];
+  x[iy] = c * x[iy] - s * x[ix];
+  x[ix] = temp;
+  iy++;
+  ix++;
+  temp = c * x[ix] + s * x[iy];
+  x[iy] = c * x[iy] - s * x[ix];
+  x[ix] = temp;
+  iy++;
+  ix++;
+  temp = c * x[ix] + s * x[iy];
+  x[iy] = c * x[iy] - s * x[ix];
+  x[ix] = temp;
+}
+
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_c_xrot_j(real_T x[24], int32_T ix0, int32_T
+  iy0, real_T c, real_T s)
+{
+  int32_T ix;
+  int32_T iy;
+  real_T temp;
   int32_T k;
-  d = 0.0;
-  ix = ix0;
-  iy = iy0;
-  for (k = 1; k <= n; k++) {
-    d += x[ix - 1] * y[iy - 1];
-    ix++;
+  ix = ix0 - 1;
+  iy = iy0 - 1;
+  for (k = 0; k < 8; k++) {
+    temp = c * x[ix] + s * x[iy];
+    x[iy] = c * x[iy] - s * x[ix];
+    x[ix] = temp;
     iy++;
-  }
-
-  return d;
-}
-
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static void ROPOD_4Wheel_Tdistkinb_cn_xaxpy(int32_T n, real_T a, int32_T ix0,
-  real_T y[27], int32_T iy0)
-{
-  int32_T ix;
-  int32_T iy;
-  int32_T k;
-  if (!(a == 0.0)) {
-    ix = ix0 - 1;
-    iy = iy0 - 1;
-    for (k = 0; k < n; k++) {
-      y[iy] += a * y[ix];
-      ix++;
-      iy++;
-    }
+    ix++;
   }
 }
 
-// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
+// Function for MATLAB Function: '<S2>/Jqwl_numeric'
+static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[24], real_T U[24],
+  real_T s[3], real_T V[9])
 {
+  int32_T q;
+  int32_T qq;
   boolean_T apply_transform;
   int32_T qjj;
   int32_T m;
   int32_T kase;
-  int32_T d_ii;
+  int32_T j_ii;
   int32_T exitg1;
   boolean_T exitg2;
-  memcpy(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0], &A[0], 27U *
+  memcpy(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[0], &A[0], 24U *
          sizeof(real_T));
-  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0], 0, 9U * sizeof
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[1] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[2] = 0.0;
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[0], 0, sizeof
+         (real_T) << 3U);
+  memset(&U[0], 0, 24U * sizeof(real_T));
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[0], 0, 9U * sizeof
          (real_T));
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[0] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[1] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[2] = 0.0;
+  qq = 0;
   apply_transform = false;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-    ROPOD_4Wheel_Tdistkinb_cn_xnrm2(3,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 1);
+    ROPOD_4Wheel_Tdistkinb_cn_xnrm2(8,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, 1);
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm > 0.0) {
     apply_transform = true;
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0] < 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[0] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] =
         -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     }
 
-    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0]) >=
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0]) >=
         1.0020841800044864E-292) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm = 1.0 /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
-      for (qjj = 0; qjj + 1 < 4; qjj++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] *=
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0];
+      for (qjj = 0; qjj + 1 < 9; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] *=
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
       }
     } else {
-      for (qjj = 0; qjj + 1 < 4; qjj++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] /=
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+      for (qjj = 0; qjj + 1 < 9; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0];
       }
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0]++;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
-      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[0]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0];
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] = 0.0;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 1;
-  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
-    qjj = 3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q;
+  for (q = 1; q + 1 < 4; q++) {
+    qjj = q << 3;
     if (apply_transform) {
-      ROPOD_4Wheel_Tdistkinb_cn_xaxpy(3, -(ROPOD_4Wheel_Tdistkinb_cn_xdotc(3,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 1,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1) /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0]), 1,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1);
+      ROPOD_4Wheel_Tdistkinb_cn_xaxpy(8, -(ROPOD_4Wheel_Tdistkinb_cn_xdotc(8,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, 1,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, qjj + 1) /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[0]), 1,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, qjj + 1);
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj];
+  }
+
+  while (qq + 1 < 9) {
+    U[qq] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qq];
+    qq++;
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-    ROPOD_4Wheel_Tdistkinb__xnrm2_n(8,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 2);
+    ROPOD_4Wheel_Tdistkinb__xnrm2_c(2,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g, 2);
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm == 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] = 0.0;
   } else {
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] < 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[1] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
         -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-    } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
-    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0]) >=
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm) >=
         1.0020841800044864E-292) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm = 1.0 /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+      for (qq = 1; qq + 1 < 4; qq++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qq] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
       }
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      for (qq = 1; qq + 1 < 4; qq++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qq] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
       }
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]++;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
-      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 4) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-        = 0.0;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[1]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0];
+    for (qq = 2; qq < 9; qq++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[qq - 1] = 0.0;
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
-      ROPOD_4Wheel_Tdistkinb__xaxpy_n(2,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq],
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 2,
+    for (qq = 1; qq + 1 < 4; qq++) {
+      ROPOD_4Wheel_Tdistkinb__xaxpy_b(7,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qq],
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, (qq << 3) + 2,
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c, 2);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
-      ROPOD_4Wheel_Tdistkinb_xaxpy_n2(2,
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1],
+    for (qq = 1; qq + 1 < 4; qq++) {
+      ROPOD_4Wheel_Tdistkinb_xaxpy_by(7,
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qq] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[1],
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c, 2,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 2);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, (qq << 3) + 2);
     }
+  }
+
+  for (qq = 1; qq + 1 < 4; qq++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[qq] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qq];
   }
 
   apply_transform = false;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-    ROPOD_4Wheel_Tdistkinb_cn_xnrm2(2,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 5);
+    ROPOD_4Wheel_Tdistkinb_cn_xnrm2(7,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, 10);
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm > 0.0) {
     apply_transform = true;
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4] < 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[9] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] =
         -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     }
 
-    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1]) >=
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1]) >=
         1.0020841800044864E-292) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm = 1.0 /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
-      for (qjj = 4; qjj + 1 < 7; qjj++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] *=
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1];
+      for (qjj = 9; qjj + 1 < 17; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] *=
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
       }
     } else {
-      for (qjj = 4; qjj + 1 < 7; qjj++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] /=
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+      for (qjj = 9; qjj + 1 < 17; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1];
       }
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4]++;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
-      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[9]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1];
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] = 0.0;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 2;
-  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
-    qjj = 3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1;
+  for (q = 2; q + 1 < 4; q++) {
+    qjj = (q << 3) + 1;
     if (apply_transform) {
-      ROPOD_4Wheel_Tdistkinb_cn_xaxpy(2, -(ROPOD_4Wheel_Tdistkinb_cn_xdotc(2,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 5,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1) /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4]), 5,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1);
+      ROPOD_4Wheel_Tdistkinb_cn_xaxpy(7, -(ROPOD_4Wheel_Tdistkinb_cn_xdotc(7,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, 10,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, qjj + 1) /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[9]), 10,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, qjj + 1);
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj];
+  }
+
+  for (qq = 1; qq + 1 < 9; qq++) {
+    U[qq + 8] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qq + 8];
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-    ROPOD_4Wheel_Tdistkinb__xnrm2_n(7,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 3);
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm == 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] = 0.0;
-  } else {
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] < 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+    ROPOD_4Wheel_Tdistkinb_cn_xnrm2(6,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx, 19);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm > 0.0) {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[18] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] =
         -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
-    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]) >=
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2]) >=
         1.0020841800044864E-292) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm = 1.0 /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2];
+      for (qjj = 18; qjj + 1 < 25; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
       }
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      for (qjj = 18; qjj + 1 < 25; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qjj] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2];
       }
     }
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2]++;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
-      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 4) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-        = 0.0;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
-    }
-
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
-      ROPOD_4Wheel_Tdistkinb__xaxpy_n(1,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq],
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 3,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c, 3);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
-    }
-
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
-    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
-      ROPOD_4Wheel_Tdistkinb_xaxpy_n2(1,
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2],
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_c, 3,
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 3);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
-    }
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 3;
-  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 2];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-    ROPOD_4Wheel_Tdistkinb__xnrm2_n(6,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 4);
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm == 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[18]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2];
   } else {
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[3] < 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-    } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-    }
-
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
-    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2]) >=
-        1.0020841800044864E-292) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm = 1.0 /
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 3;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
-      }
-    } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 3;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
-      }
-    }
-
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
-      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] = 0.0;
   }
 
-  m = 2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[8];
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] = 0.0;
+  for (qq = 2; qq + 1 < 9; qq++) {
+    U[qq + 16] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[qq + 16];
+  }
+
+  m = 1;
+  for (q = 2; q >= 0; q--) {
+    qq = (q << 3) + q;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] != 0.0) {
+      for (kase = q + 1; kase + 1 < 4; kase++) {
+        qjj = ((kase << 3) + q) + 1;
+        ROPOD_4Wheel_Tdistkinb_cn_xaxpy(8 - q, -(ROPOD_4Wheel_Tdistkinb_cn_xdotc
+          (8 - q, U, qq + 1, U, qjj) / U[qq]), qq + 1, U, qjj);
+      }
+
+      for (qjj = q; qjj + 1 < 9; qjj++) {
+        U[qjj + (q << 3)] = -U[(q << 3) + qjj];
+      }
+
+      U[qq]++;
+      for (qq = 1; qq <= q; qq++) {
+        U[(qq + (q << 3)) - 1] = 0.0;
+      }
+    } else {
+      memset(&U[q << 3], 0, sizeof(real_T) << 3U);
+      U[qq] = 1.0;
+    }
+  }
+
+  for (qq = 2; qq >= 0; qq--) {
+    if ((qq + 1 <= 1) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] !=
+                          0.0)) {
+      for (q = 2; q < 4; q++) {
+        qjj = (q - 1) * 3 + 2;
+        ROPOD_4Wheel_Tdistkin_xaxpy_byo(2, -(ROPOD_4Wheel_Tdistkinb__xdotc_d(2,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 2,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, qjj) /
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[1]), 2,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, qjj);
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[3 * qq] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[1 + 3 * qq] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[2 + 3 * qq] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[qq + 3 * qq] = 1.0;
+  }
+
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0];
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] != 0.0) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0]);
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0]);
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+    ROPOD_4Wheel_Tdistkinb_cn_xscal
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm, U, 1);
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest != 0.0) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest);
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] *=
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] *=
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+    ROPOD_4Wheel_Tdistkinb__xscal_a
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm,
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 4);
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[17];
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] != 0.0) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1]);
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1]);
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_cx[17] /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+    ROPOD_4Wheel_Tdistkinb_cn_xscal
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm, U, 9);
   }
 
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest != 0.0) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest);
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt /
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[8];
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] != 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2]);
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] /
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] *=
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm;
+    ROPOD_4Wheel_Tdistkinb__xscal_a
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm,
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 7);
   }
 
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest != 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest);
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt /
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm * 0.0;
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[1] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] != 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] = (rtNaN);
-  }
-
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[3] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 0;
-  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] >
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0]) || rtIsNaN
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0])) {
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2]);
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
-  } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
-  }
-
-  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] >
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]) || rtIsNaN
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1])) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
-  } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
-  }
-
-  if (!((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm >
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt) || rtIsNaN
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt))) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] /
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+    ROPOD_4Wheel_Tdistkinb_cn_xscal
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm, U, 17);
   }
 
-  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] >
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[2] = 0.0;
+  qq = 0;
+  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0] >
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0]) || rtIsNaN
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0])) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[0];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0];
+  }
+
+  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1] >
        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest) || rtIsNaN
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest)) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[1];
   }
 
   if (!((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm >
@@ -797,30 +910,42 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
   }
 
-  while ((m + 2 > 0) && (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq >= 75)))
-  {
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2] > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[2];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = 0.0;
+  }
+
+  if (!((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm >
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt) || rtIsNaN
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt))) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+  }
+
+  while ((m + 2 > 0) && (!(qq >= 75))) {
     kase = m + 1;
     do {
       exitg1 = 0;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = kase;
+      q = kase;
       if (kase == 0) {
         exitg1 = 1;
       } else {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1]);
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[kase - 1]);
         if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt <= (fabs
-             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[kase - 1]) + fabs
-             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[kase])) *
+             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[kase - 1]) + fabs
+             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[kase])) *
             2.2204460492503131E-16) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1] = 0.0;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[kase - 1] = 0.0;
           exitg1 = 1;
         } else if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt <=
-                    1.0020841800044864E-292) ||
-                   ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq > 20) &&
+                    1.0020841800044864E-292) || ((qq > 20) &&
                     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt <=
                      2.2204460492503131E-16 *
                      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm))) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1] = 0.0;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[kase - 1] = 0.0;
           exitg1 = 1;
         } else {
           kase--;
@@ -832,35 +957,35 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
       kase = 4;
     } else {
       qjj = m + 2;
-      d_ii = m + 2;
+      j_ii = m + 2;
       exitg2 = false;
-      while ((!exitg2) && (d_ii >= kase)) {
-        qjj = d_ii;
-        if (d_ii == kase) {
+      while ((!exitg2) && (j_ii >= kase)) {
+        qjj = j_ii;
+        if (j_ii == kase) {
           exitg2 = true;
         } else {
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = 0.0;
-          if (d_ii < m + 2) {
+          if (j_ii < m + 2) {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt = fabs
-              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[d_ii - 1]);
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[j_ii - 1]);
           }
 
-          if (d_ii > kase + 1) {
+          if (j_ii > kase + 1) {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt += fabs
-              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[d_ii - 2]);
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[j_ii - 2]);
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest = fabs
-            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[d_ii - 1]);
+            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[j_ii - 1]);
           if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest <=
                2.2204460492503131E-16 *
                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt) ||
               (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest <=
                1.0020841800044864E-292)) {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[d_ii - 1] = 0.0;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[j_ii - 1] = 0.0;
             exitg2 = true;
           } else {
-            d_ii--;
+            j_ii--;
           }
         }
       }
@@ -871,86 +996,90 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
         kase = 1;
       } else {
         kase = 2;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = qjj;
+        q = qjj;
       }
     }
 
     switch (kase) {
      case 1:
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m];
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m] = 0.0;
-      for (qjj = m; qjj + 1 >= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1;
-           qjj--) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[m];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[m] = 0.0;
+      for (qjj = m; qjj + 1 >= q + 1; qjj--) {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj];
         ROPOD_4Wheel_Tdistkinb_cn_xrotg
           (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj] =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
-        if (qjj + 1 > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1) {
+        if (qjj + 1 > q + 1) {
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
-            -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *=
+            -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0];
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] *=
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
         }
+
+        ROPOD_4Wheel_Tdistkinb_cnt_xrot
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 1 + 3 * qjj, 1 + 3 *
+           (m + 1), ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
       }
       break;
 
      case 2:
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q
-        - 1];
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q
-        - 1] = 0.0;
-      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 <= m + 2) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q - 1];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q - 1] = 0.0;
+      for (qjj = q; qjj + 1 <= m + 2; qjj++) {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q];
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj];
         ROPOD_4Wheel_Tdistkinb_cn_xrotg
           (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-          = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
           -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q];
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
+        ROPOD_4Wheel_Tdistkinb_c_xrot_j(U, 1 + (qjj << 3), 1 + ((q - 1) << 3),
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
       }
       break;
 
      case 3:
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[0] = fabs
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m + 1]);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[1] = fabs
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m]);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[2] = fabs
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m]);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[3] = fabs
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]);
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[4] = fabs
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[0] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[m + 1]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[1] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[m]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[2] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[m]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[3] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[4] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q]);
       qjj = 1;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[0];
-      if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[0]))
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[0];
+      if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[0]))
       {
         kase = 2;
         exitg2 = false;
         while ((!exitg2) && (kase < 6)) {
           qjj = kase;
           if (!rtIsNaN
-              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[kase - 1]))
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[kase - 1]))
           {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[kase - 1];
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[kase - 1];
             exitg2 = true;
           } else {
             kase++;
@@ -960,10 +1089,10 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
 
       if (qjj < 5) {
         while (qjj + 1 < 6) {
-          if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[qjj] >
+          if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[qjj] >
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest) {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_p[qjj];
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_f[qjj];
           }
 
           qjj++;
@@ -971,17 +1100,17 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
       }
 
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m + 1] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[m + 1] /
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[m] /
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1 =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[m] /
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 =
         ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 +
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt) *
@@ -1019,62 +1148,1028 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt) +
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
-        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[q] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest *
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
-      for (qjj = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1; qjj <= m + 1;
-           qjj++) {
+      for (qjj = q + 1; qjj <= m + 1; qjj++) {
         ROPOD_4Wheel_Tdistkinb_cn_xrotg
           (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
-        if (qjj > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 2] =
+        if (qjj > q + 1) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[0] =
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
         }
 
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj - 1] *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj - 1] *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj - 1] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj - 1] *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds -
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj - 1] *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1;
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj] *=
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
+        ROPOD_4Wheel_Tdistkinb_cnt_xrot
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 1 + 3 * (qjj - 1), 1
+           + 3 * qjj, ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
         ROPOD_4Wheel_Tdistkinb_cn_xrotg
           (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj - 1] =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj - 1] *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds +
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj - 1] *
+          -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
+        ROPOD_4Wheel_Tdistkinb_c_xrot_j(U, 1 + ((qjj - 1) << 3), 1 + (qjj << 3),
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1);
+      }
+
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e_g[m] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+      qq++;
+      break;
+
+     default:
+      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] < 0.0) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] =
+          -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q];
+        ROPOD_4Wheel_Tdistkinb__xscal_a(-1.0,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 1 + 3 * q);
+      }
+
+      qq = q + 1;
+      while ((q + 1 < 3) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] <
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qq])) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[q] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qq];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[qq] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+        ROPOD_4Wheel_Tdistkinb_cn_xswap
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf, 1 + 3 * q, 1 + 3 * (q
+            + 1));
+        ROPOD_4Wheel_Tdistkinb__xswap_j(U, 1 + (q << 3), 1 + ((q + 1) << 3));
+        q = qq;
+        qq++;
+      }
+
+      qq = 0;
+      m--;
+      break;
+    }
+  }
+
+  for (m = 0; m < 3; m++) {
+    s[m] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_s[m];
+    V[3 * m] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[3 * m];
+    V[1 + 3 * m] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[3 * m + 1];
+    V[2 + 3 * m] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Vf[3 * m + 2];
+  }
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static real_T ROPOD_4Wheel_Tdistkinb__xnrm2_n(int32_T n, const real_T x[27],
+  int32_T ix0)
+{
+  real_T y;
+  int32_T kend;
+  int32_T k;
+  y = 0.0;
+  if (n == 1) {
+    y = fabs(x[ix0 - 1]);
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d =
+      3.3121686421112381E-170;
+    kend = (ix0 + n) - 1;
+    for (k = ix0; k <= kend; k++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_e = fabs(x[k - 1]);
+      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_e >
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d /
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_e;
+        y = y * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj + 1.0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_e;
+      } else {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_e /
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d;
+        y += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_bj;
+      }
+    }
+
+    y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d * sqrt(y);
+  }
+
+  return y;
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[9],
+  int32_T ix0)
+{
+  real_T y;
+  int32_T kend;
+  int32_T k;
+  y = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l = 3.3121686421112381E-170;
+  kend = (ix0 + n) - 1;
+  for (k = ix0; k <= kend; k++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_h = fabs(x[k - 1]);
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_h >
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_h;
+      y = y * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b + 1.0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_h;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk_h /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l;
+      y += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t_b;
+    }
+  }
+
+  return ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_l * sqrt(y);
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static void ROPOD_4Wheel_Tdistkin_xaxpy_n2l(int32_T n, real_T a, const real_T x
+  [3], int32_T ix0, real_T y[27], int32_T iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  if (!((n < 1) || (a == 0.0))) {
+    ix = ix0 - 1;
+    iy = iy0 - 1;
+    for (k = 0; k < n; k++) {
+      y[iy] += a * x[ix];
+      ix++;
+      iy++;
+    }
+  }
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static void ROPOD_4Wheel_Tdistkinb_xaxpy_n2(int32_T n, real_T a, const real_T x
+  [27], int32_T ix0, real_T y[3], int32_T iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  if (!((n < 1) || (a == 0.0))) {
+    ix = ix0 - 1;
+    iy = iy0 - 1;
+    for (k = 0; k < n; k++) {
+      y[iy] += a * x[ix];
+      ix++;
+      iy++;
+    }
+  }
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static void ROPOD_4Wheel_Tdistkinb__xrotg_o(real_T *a, real_T *b, real_T *c,
+  real_T *s)
+{
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.roe_o = *b;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b = fabs(*a);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb_n = fabs(*b);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b >
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb_n) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.roe_o = *a;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb_n;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b == 0.0) {
+    *s = 0.0;
+    *c = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b = 0.0;
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb_n /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b *= sqrt
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads *
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ads +
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds *
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.bds);
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.roe_o < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+    }
+
+    *c = *a / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+    *s = *b / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b >
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absb_n) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b = *s;
+    } else if (*c != 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b = 1.0 / *c;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b = 1.0;
+    }
+  }
+
+  *a = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_b;
+  *b = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absa_b;
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static real_T ROPOD_4Wheel_Tdistkinb__xdotc_i(int32_T n, const real_T x[27],
+  int32_T ix0, const real_T y[27], int32_T iy0)
+{
+  real_T d;
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  d = 0.0;
+  ix = ix0;
+  iy = iy0;
+  for (k = 1; k <= n; k++) {
+    d += x[ix - 1] * y[iy - 1];
+    ix++;
+    iy++;
+  }
+
+  return d;
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static void ROPOD_4Wheel_Tdistkinb__xaxpy_n(int32_T n, real_T a, int32_T ix0,
+  real_T y[27], int32_T iy0)
+{
+  int32_T ix;
+  int32_T iy;
+  int32_T k;
+  if (!(a == 0.0)) {
+    ix = ix0 - 1;
+    iy = iy0 - 1;
+    for (k = 0; k < n; k++) {
+      y[iy] += a * y[ix];
+      ix++;
+      iy++;
+    }
+  }
+}
+
+// Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
+static void ROPOD_4Wheel_Tdistkinb_cn_svd_g(const real_T A[27], real_T U[3])
+{
+  boolean_T apply_transform;
+  int32_T qjj;
+  int32_T m;
+  int32_T kase;
+  int32_T d_ii;
+  int32_T exitg1;
+  boolean_T exitg2;
+  memcpy(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0], &A[0], 27U *
+         sizeof(real_T));
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0], 0, 9U * sizeof
+         (real_T));
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m[0] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m[1] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m[2] = 0.0;
+  apply_transform = false;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+    ROPOD_4Wheel_Tdistkinb__xnrm2_n(3,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 1);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j > 0.0) {
+    apply_transform = true;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    }
+
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0]) >=
+        1.0020841800044864E-292) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j = 1.0 /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+      for (qjj = 0; qjj + 1 < 4; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+      }
+    } else {
+      for (qjj = 0; qjj + 1 < 4; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] = 0.0;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 1;
+  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
+    qjj = 3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q;
+    if (apply_transform) {
+      ROPOD_4Wheel_Tdistkinb__xaxpy_n(3, -(ROPOD_4Wheel_Tdistkinb__xdotc_i(3,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 1,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1) /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[0]), 1,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1);
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+    ROPOD_4Wheel_Tdistkinb_xnrm2_ng(8,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 2);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] = 0.0;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0]) >=
+        1.0020841800044864E-292) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j = 1.0 /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 4) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+        = 0.0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
+      ROPOD_4Wheel_Tdistkinb_xaxpy_n2(2,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq],
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 2,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m, 2);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 1;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
+      ROPOD_4Wheel_Tdistkin_xaxpy_n2l(2,
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1],
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m, 2,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 2);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+  }
+
+  apply_transform = false;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+    ROPOD_4Wheel_Tdistkinb__xnrm2_n(2,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 5);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j > 0.0) {
+    apply_transform = true;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    }
+
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1]) >=
+        1.0020841800044864E-292) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j = 1.0 /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+      for (qjj = 4; qjj + 1 < 7; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+      }
+    } else {
+      for (qjj = 4; qjj + 1 < 7; qjj++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj] /=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] = 0.0;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 2;
+  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
+    qjj = 3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1;
+    if (apply_transform) {
+      ROPOD_4Wheel_Tdistkinb__xaxpy_n(2, -(ROPOD_4Wheel_Tdistkinb__xdotc_i(2,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 5,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1) /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[4]), 5,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, qjj + 1);
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[qjj];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+    ROPOD_4Wheel_Tdistkinb_xnrm2_ng(7,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 3);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] = 0.0;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]) >=
+        1.0020841800044864E-292) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j = 1.0 /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2]++;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 4) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+        = 0.0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
+      ROPOD_4Wheel_Tdistkinb_xaxpy_n2(1,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq],
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 3,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m, 3);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 2;
+    while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 < 10) {
+      ROPOD_4Wheel_Tdistkin_xaxpy_n2l(1,
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2],
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_m, 3,
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c, 3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 3);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+    }
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = 3;
+  while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 < 10) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+      = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[3 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 2];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+    ROPOD_4Wheel_Tdistkinb_xnrm2_ng(6,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e, 4);
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] = 0.0;
+  } else {
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[3] < 0.0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
+    if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2]) >=
+        1.0020841800044864E-292) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j = 1.0 /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 3;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 3;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq + 1 <= 9) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
+          /= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
+      }
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
+  }
+
+  m = 2;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[8];
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0]);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+  }
+
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] *=
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1]);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+  }
+
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A_c[8];
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2];
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2]);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j;
+  }
+
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j * 0.0;
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[2] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] != 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[3] = (rtNaN);
+  }
+
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[3] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq = 0;
+  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0] >
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0]) || rtIsNaN
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0])) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[0];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[0];
+  }
+
+  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1] >
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1]) || rtIsNaN
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1])) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[1];
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[1];
+  }
+
+  if (!((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j >
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) || rtIsNaN
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d))) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+  }
+
+  if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2] >
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g) || rtIsNaN
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[2];
+  }
+
+  if (!((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j >
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g) || rtIsNaN
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g))) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+  }
+
+  while ((m + 2 > 0) && (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq >= 75)))
+  {
+    kase = m + 1;
+    do {
+      exitg1 = 0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = kase;
+      if (kase == 0) {
+        exitg1 = 1;
+      } else {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1]);
+        if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d <= (fabs
+             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[kase - 1]) + fabs
+             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[kase])) *
+            2.2204460492503131E-16) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1] = 0.0;
+          exitg1 = 1;
+        } else if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d <=
+                    1.0020841800044864E-292) ||
+                   ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq > 20) &&
+                    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d <=
+                     2.2204460492503131E-16 *
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.nrm_j))) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[kase - 1] = 0.0;
+          exitg1 = 1;
+        } else {
+          kase--;
+        }
+      }
+    } while (exitg1 == 0);
+
+    if (m + 1 == kase) {
+      kase = 4;
+    } else {
+      qjj = m + 2;
+      d_ii = m + 2;
+      exitg2 = false;
+      while ((!exitg2) && (d_ii >= kase)) {
+        qjj = d_ii;
+        if (d_ii == kase) {
+          exitg2 = true;
+        } else {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = 0.0;
+          if (d_ii < m + 2) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d = fabs
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[d_ii - 1]);
+          }
+
+          if (d_ii > kase + 1) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d += fabs
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[d_ii - 2]);
+          }
+
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g = fabs
+            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[d_ii - 1]);
+          if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g <=
+               2.2204460492503131E-16 *
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) ||
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g <=
+               1.0020841800044864E-292)) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[d_ii - 1] = 0.0;
+            exitg2 = true;
+          } else {
+            d_ii--;
+          }
+        }
+      }
+
+      if (qjj == kase) {
+        kase = 3;
+      } else if (m + 2 == qjj) {
+        kase = 1;
+      } else {
+        kase = 2;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q = qjj;
+      }
+    }
+
+    switch (kase) {
+     case 1:
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m] = 0.0;
+      for (qjj = m; qjj + 1 >= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1;
+           qjj--) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
+        ROPOD_4Wheel_Tdistkinb__xrotg_o
+          (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l);
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+        if (qjj + 1 > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+            -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *=
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d;
+        }
+      }
+      break;
+
+     case 2:
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q
+        - 1];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q
+        - 1] = 0.0;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1 <= m + 2) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q];
+        ROPOD_4Wheel_Tdistkinb__xrotg_o
+          (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l);
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+          = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+          -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+          *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q++;
+      }
+      break;
+
+     case 3:
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[0] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m + 1]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[1] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[2] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[3] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[4] = fabs
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]);
+      qjj = 1;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[0];
+      if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[0]))
+      {
+        kase = 2;
+        exitg2 = false;
+        while ((!exitg2) && (kase < 6)) {
+          qjj = kase;
+          if (!rtIsNaN
+              (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[kase - 1]))
+          {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[kase - 1];
+            exitg2 = true;
+          } else {
+            kase++;
+          }
+        }
+      }
+
+      if (qjj < 5) {
+        while (qjj + 1 < 6) {
+          if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[qjj] >
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.varargin_1_g[qjj];
+          }
+
+          qjj++;
+        }
+      }
+
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m + 1] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[m] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m] /
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l =
+        ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) *
+         (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l -
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) +
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d *
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d) / 2.0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d *=
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d *=
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d;
+      if ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l != 0.0) ||
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d != 0.0)) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l = sqrt
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l *
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l +
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d);
+        if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l < 0.0) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l =
+            -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l;
+        }
+
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.emm1_d /
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l +
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l);
+      } else {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l = 0.0;
+      }
+
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d +
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) *
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d -
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d) +
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.shift_l;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
+        / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d;
+      for (qjj = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1; qjj <= m + 1;
+           qjj++) {
+        ROPOD_4Wheel_Tdistkinb__xrotg_o
+          (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l);
+        if (qjj > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q + 1) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 2] =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+        }
+
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d -
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj] *=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d;
+        ROPOD_4Wheel_Tdistkinb__xrotg_o
+          (&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d,
+           &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l);
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj - 1] =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj] =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj - 1] *
-          -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds *
+          -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[qjj];
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ztest_g =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.smm1_l *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj];
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[qjj] *=
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sqds_d;
       }
 
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.e[m] =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
       break;
 
@@ -1093,13 +2188,13 @@ static void ROPOD_4Wheel_Tdistkinb_cntr_svd(const real_T A[27], real_T U[3])
               <
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]))
       {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q];
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q]
           =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq];
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.s[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq]
-          = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt;
+          = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rt_d;
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.q =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq;
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.qq++;
@@ -1179,7 +2274,7 @@ static void ROPOD_4Wheel_Tdistkinb_cn_abs_d(const real_T x[21], real_T y[21])
 }
 
 // Function for MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal'
-static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[81],
+static real_T ROPOD_4Wheel_Tdistkin_xnrm2_ngs(int32_T n, const real_T x[81],
   int32_T ix0)
 {
   real_T y;
@@ -1192,22 +2287,22 @@ static real_T ROPOD_4Wheel_Tdistkinb_xnrm2_ng(int32_T n, const real_T x[81],
     if (n == 1) {
       y = fabs(x[ix0 - 1]);
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz =
         3.3121686421112381E-170;
       kend = (ix0 + n) - 1;
       for (k = ix0; k <= kend; k++) {
         absxk = fabs(x[k - 1]);
-        if (absxk > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d) {
-          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d / absxk;
+        if (absxk > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz) {
+          t = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz / absxk;
           y = y * t * t + 1.0;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d = absxk;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz = absxk;
         } else {
-          t = absxk / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d;
+          t = absxk / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz;
           y += t * t;
         }
       }
 
-      y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_d * sqrt(y);
+      y = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.scale_jz * sqrt(y);
     }
   }
 
@@ -1302,21 +2397,21 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
 {
   int32_T exitg1;
   boolean_T exitg2;
-  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_b[0], 0, 9U * sizeof
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_p[0], 0, 9U * sizeof
          (real_T));
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l < 9;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l++) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o < 9;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o++) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l * 9 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l;
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l + 1 < 9) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o * 9 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o + 1 < 9) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp =
         A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i];
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b = 0.0;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm =
-        ROPOD_4Wheel_Tdistkinb_xnrm2_ng(8 -
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l, A,
+        ROPOD_4Wheel_Tdistkin_xnrm2_ngs(8 -
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o, A,
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 2);
       if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm != 0.0) {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm = rt_hypotd_snf
@@ -1330,18 +2425,18 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
         if (fabs(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm) <
             1.0020841800044864E-292) {
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt = 0;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n =
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i -
-             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l) + 9;
+             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o) + 9;
           do {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt++;
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m =
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 1;
-            while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d + 1 <=
-                   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d) {
-              A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d] *=
+            while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m + 1 <=
+                   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n) {
+              A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m] *=
                 9.9792015476736E+291;
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d++;
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m++;
             }
 
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm *=
@@ -1353,8 +2448,8 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
 
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm = rt_hypotd_snf
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp,
-             ROPOD_4Wheel_Tdistkinb_xnrm2_ng(8 -
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l, A,
+             ROPOD_4Wheel_Tdistkin_xnrm2_ngs(8 -
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o, A,
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 2));
           if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp >= 0.0) {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm =
@@ -1368,24 +2463,24 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp = 1.0 /
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp -
              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm);
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n =
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i -
-             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l) + 9;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d =
+             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o) + 9;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m =
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 1;
-          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d + 1 <=
-                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d) {
-            A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d] *=
+          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m + 1 <=
+                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n) {
+            A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m] *=
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp;
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d++;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m++;
           }
 
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d = 1;
-          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d <=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n = 1;
+          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n <=
                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt) {
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm *=
               1.0020841800044864E-292;
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d++;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n++;
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp =
@@ -1400,14 +2495,14 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.xnorm);
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt =
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i -
-             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l) + 9;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d =
+             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o) + 9;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n =
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 1;
-          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d + 1 <=
+          while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n + 1 <=
                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt) {
-            A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d] *=
+            A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n] *=
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp;
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d++;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n++;
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp =
@@ -1415,7 +2510,7 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
         }
       }
 
-      tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l] =
+      tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o] =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b;
       A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i] =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_atmp;
@@ -1423,44 +2518,44 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
         A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i];
       A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i] = 1.0;
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt =
-        ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l + 1) * 9 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l) + 1;
-      if (tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l] != 0.0) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d = 9 -
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d =
+        ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o + 1) * 9 +
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o) + 1;
+      if (tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o] != 0.0) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n = 9 -
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m =
           (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i -
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l) + 8;
-        while ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d > 0) &&
-               (A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d] == 0.0))
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o) + 8;
+        while ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n > 0) &&
+               (A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m] == 0.0))
         {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d--;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d--;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n--;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m--;
         }
 
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d = 8 -
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m = 8 -
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o;
         exitg2 = false;
-        while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d
+        while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m
                              > 0)) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_l =
-            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d - 1) * 9 +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_c =
+            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m - 1) * 9 +
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_o =
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_l;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_m =
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_c;
           do {
             exitg1 = 0;
-            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_o <=
-                (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_l +
-                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d) - 1) {
-              if (A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_o - 1] != 0.0)
+            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_m <=
+                (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop_c +
+                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n) - 1) {
+              if (A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_m - 1] != 0.0)
               {
                 exitg1 = 1;
               } else {
-                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_o++;
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_m++;
               }
             } else {
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d--;
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m--;
               exitg1 = 2;
             }
           } while (exitg1 == 0);
@@ -1470,23 +2565,23 @@ static void ROPOD_4Wheel_Tdistkinb_c_xgeqrf(real_T A[81], real_T tau[9])
           }
         }
       } else {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d = 0;
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d = 0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n = 0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m = 0;
       }
 
-      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d > 0) {
+      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n > 0) {
         ROPOD_4Wheel_Tdistkinb_cn_xgemv
-          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d,
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d, A,
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n,
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m, A,
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt, A,
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 1,
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_b);
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_p);
         ROPOD_4Wheel_Tdistkinb_cnt_xger
-          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_d,
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_d,
-           -tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_l],
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv_n,
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc_m,
+           -tau[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_o],
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i_i + 1,
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_b, A,
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.work_p, A,
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.knt);
       }
 
@@ -1567,18 +2662,18 @@ static void ROPOD_4Wheel_Tdistkinb_cntr__qr(const real_T A[81], real_T Q[81],
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop =
             (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc - 1) * 9 +
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.iaii;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_i =
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop;
           do {
             exitg1 = 0;
-            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia + 9 <=
+            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_i + 9 <=
                 (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.coltop +
                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastv) + 8) {
-              if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia
+              if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_A[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_i
                   + 8] != 0.0) {
                 exitg1 = 1;
               } else {
-                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia++;
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia_i++;
               }
             } else {
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.lastc--;
@@ -1665,29 +2760,29 @@ static real_T ROPOD_4Wheel_Tdistki_KWIKfactor(const real_T Ac[189], const
   Status = 1.0;
   memset(&RLinv[0], 0, 81U * sizeof(real_T));
   for (i = 1; i <= nA; i++) {
-    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = 0;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 < 9;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3++) {
-      RLinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + 9 * (i - 1)] = 0.0;
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 < 9;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2++) {
+      RLinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 + 9 * (i - 1)] = 0.0;
     }
 
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i = i - 1;
-    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = 0;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 < 9;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3++) {
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 < 9;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2++) {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + 9 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 + 9 *
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i;
       RLinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = 0.0;
-      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 = 0;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 < 9;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4++) {
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 < 9;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3++) {
         RLinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = Ac[(iC[i - 1] +
-          21 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4) - 1] * Linv[9 *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3] + RLinv[9 *
+          21 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3) - 1] * Linv[9 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2] + RLinv[9 *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3];
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2];
       }
     }
   }
@@ -1711,28 +2806,28 @@ static real_T ROPOD_4Wheel_Tdistki_KWIKfactor(const real_T Ac[189], const
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i = i + 1;
         for (j = 0; j < 9; j++) {
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j = j + 1;
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = 0.0;
-          for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = 0;
-               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 < 9;
-               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3++) {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 += Linv
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d9 = 0.0;
+          for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = 0;
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 < 9;
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2++) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d9 += Linv
               [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i - 1) * 9 +
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3] *
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2] *
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.QQ
               [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j - 1) * 9 +
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3];
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2];
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL[i + 9 * j] =
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d9;
         }
       }
 
       memset(&RLinv[0], 0, 81U * sizeof(real_T));
       i = nA;
       while (i > 0) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = i - 1;
-        RLinv[(i + 9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3) - 1] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = i - 1;
+        RLinv[(i + 9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2) - 1] =
           1.0;
         for (j = i; j <= nA; j++) {
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j = j - 1;
@@ -1741,56 +2836,56 @@ static real_T ROPOD_4Wheel_Tdistki_KWIKfactor(const real_T Ac[189], const
         }
 
         if (i > 1) {
-          for (j = 1; j <= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3; j++)
+          for (j = 1; j <= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2; j++)
           {
             for (c_k = i; c_k <= nA; c_k++) {
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j = c_k - 1;
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 =
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 =
                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j * 9;
               RLinv[(j + 9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j) - 1]
-                = RLinv[(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 + j) - 1]
+                = RLinv[(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + j) - 1]
                 - ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.RR
-                [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 * 9 + j) - 1] *
-                RLinv[(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 + i) - 1];
+                [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 * 9 + j) - 1] *
+                RLinv[(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + i) - 1];
             }
           }
         }
 
-        i = (int16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3;
+        i = (int16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2;
       }
 
       for (i = 0; i < 9; i++) {
         for (j = (int16_T)(i + 1); j < 10; j++) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = j - 1;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = j - 1;
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j = i + 9 *
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2;
           H[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = 0.0;
           for (c_k = (int16_T)(nA + 1); c_k < 10; c_k++) {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 = (c_k - 1) * 9;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = (c_k - 1) * 9;
             H[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = H[(j - 1) * 9 + i]
               - ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL
-              [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 + j) - 1] *
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4
+              [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + j) - 1] *
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3
               + i];
           }
 
-          H[(j + 9 * i) - 1] = H[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 *
+          H[(j + 9 * i) - 1] = H[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 *
             9 + i];
         }
       }
 
       for (i = 1; i <= nA; i++) {
         for (j = 0; j < 9; j++) {
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = i - 1;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = i - 1;
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j = j + 9 *
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2;
           D[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = 0.0;
           for (c_k = i; c_k <= nA; c_k++) {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 = (c_k - 1) * 9;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 = (c_k - 1) * 9;
             D[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.j] = RLinv
-              [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4 + i) - 1] *
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i4
-              + j] + D[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 * 9 + j];
+              [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3 + i) - 1] *
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TL[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i3
+              + j] + D[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 * 9 + j];
           }
         }
       }
@@ -1878,19 +2973,19 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
   boolean_T guard1 = false;
   boolean_T guard2 = false;
   cTolComputed = true;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g < 27;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g++) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 27;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
     cTolComputed = (cTolComputed && ((!rtIsInf
-      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g])) && (!rtIsNaN
-      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g]))));
+      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k])) && (!rtIsNaN
+      (Aeq[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]))));
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_svd(Aeq,
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2);
+  ROPOD_4Wheel_Tdistkinb_cn_svd_g(Aeq,
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv6);
   if (cTolComputed) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[0];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv6[0];
   } else {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.absxk = (rtNaN);
   }
@@ -1911,15 +3006,15 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
     for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp = 0;
          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp < 9;
          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart + 9 *
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g]
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
         = 0.0;
       for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp = 0;
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp < 9;
            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g]
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Hinv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
           = Linv[9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart +
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp] * Linv[9 *
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp +
@@ -1955,7 +3050,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_b[18] = beq[0];
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_b[19] = beq[1];
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_b[20] = beq[2];
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g = 1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 1;
   for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart = 0;
        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart < 21;
        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart++) {
@@ -2029,7 +3124,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
     do {
       exitg3 = 0;
       if ((!DualFeasible) && (nA > 0) &&
-          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g <= 200)) {
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k <= 200)) {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Xnorm0 =
           ROPOD_4Wheel_Tdistki_KWIKfactor
           (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac,
@@ -2145,15 +3240,15 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp = 32767;
               }
 
-              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = 9 + kDrop;
-              if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 > 32767) {
-                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2 = 32767;
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 = 9 + kDrop;
+              if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 > 32767) {
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 = 32767;
               }
 
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Opt[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp
                 - 1] = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U[((kDrop - 1)
                 * 9 + kNext) - 1] *
-                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Rhs[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i2
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Rhs[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1
                 - 1] +
                 ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Opt[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_tmp
                 - 1];
@@ -2199,8 +3294,8 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
             memcpy(&x[0], &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Opt[0],
                    9U * sizeof(real_T));
           } else {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g++;
-            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g > q) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++;
+            if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k > q) {
               ROPOD_4Wheel_T_ResetToColdStart
                 (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.iA,
                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.iC);
@@ -2240,7 +3335,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Xnorm0 =
       ROPOD_4Wheel_Tdistkinb_cnt_norm(x);
     exitg2 = false;
-    while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g <= 200))
+    while ((!exitg2) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k <= 200))
     {
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.cMin = -1.0E-6;
       kNext = 0;
@@ -2250,7 +3345,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
           for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart = 0;
                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart < 9;
                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart++) {
-            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac_c[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart]
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac_b[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart]
               = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac[(21 *
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart +
               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.kDrop_tmp) - 1] *
@@ -2258,7 +3353,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
           }
 
           ROPOD_4Wheel_Tdistkinb_cntr_abs
-            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac_c,
+            (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Ac_b,
              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.AcRow);
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ixstart = 1;
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.cVal =
@@ -2337,7 +3432,7 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
       } else {
         do {
           exitg1 = 0;
-          if ((kNext > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g <=
+          if ((kNext > 0) && (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k <=
                               200)) {
             guard2 = false;
             if (nA == 0) {
@@ -2619,13 +3714,13 @@ static void ROPOD_4Wheel_Tdistk_mpcqpsolver(const real_T Linv[81], const real_T
                       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.iA[kNext - 1] =
                         1;
                       kNext = 0;
-                      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g++;
+                      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++;
                     }
                   } else {
-                    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g++;
+                    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++;
                   }
                 } else {
-                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k_g++;
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++;
                 }
               }
             }
@@ -2783,28 +3878,28 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Gain: '<S20>/sign convention3'
 
   if (rtb_Compare) {
-    memcpy(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[0],
+    memcpy(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[0],
            &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value[0],
            sizeof(real_T) << 3U);
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[0] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction[5];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[1] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.signconvention_Gain *
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction[17];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[2] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[2] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_o[5];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[3] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[3] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.signconvention1_Gain *
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_o[17];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[4] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[4] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_b[5];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[5] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[5] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.signconvention2_Gain *
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_b[17];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[6] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[6] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_m[5];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[7] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[7] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.signconvention3_Gain *
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_m[17];
   }
@@ -3346,25 +4441,25 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Sum: '<S20>/Add'
 
   if (rtb_Compare) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[0] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_l[0];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[1] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_l[1];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[2] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_l[2];
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[3] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_l[3];
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[0] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction[28] -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.pivot_offs_sw1;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[1] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_o[28] -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.pivot_offs_sw2;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[2] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_b[28] -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.pivot_offs_sw3;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[3] =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.SFunction_m[28] -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.pivot_offs_sw4;
   }
@@ -3372,103 +4467,103 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of Switch: '<S20>/Switch'
 
   // MATLAB Function: '<S42>/Gl_matrix' incorporates:
-  //   MATLAB Function: '<S2>/Jqwl_matrix'
   //   MATLAB Function: '<S44>/Gl_matrices'
   //   SignalConversion: '<S45>/TmpSignal ConversionAt SFunction Inport1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3);
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[0]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[0]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 = cos
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[1]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[1]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 = cos
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[2]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[2]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 = cos
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[3]);
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 = sin
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[3]);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter11_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter12_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter13_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter14_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter15_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a *
+    0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter16_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter17_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp * 0.5;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
     // Start for MATLABSystem: '<S9>/Get Parameter'
@@ -3653,12 +4748,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //
     //   Add in CPU
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch_j -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1;
 
     // RelationalOperator: '<S39>/LowerRelop1'
-    rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 >
+    rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g >
                        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_e);
 
     // Switch: '<S39>/Switch2'
@@ -3671,10 +4766,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       // Switch: '<S39>/Switch' incorporates:
       //   RelationalOperator: '<S39>/UpperRelop'
 
-      if (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 <
+      if (!(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g <
             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_e)) {
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_e =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g;
       }
 
       // End of Switch: '<S39>/Switch'
@@ -3715,17 +4810,17 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
     if (rtb_Gain6 >
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Switch1_Threshold) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.In1.Linear.Y;
     }
 
     // End of Switch: '<S10>/Switch1'
 
     // RelationalOperator: '<S37>/LowerRelop1'
-    rtb_LowerRelop1_i = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f >
+    rtb_LowerRelop1_i = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n >
                          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.max_vel_xy);
   }
 
@@ -3758,13 +4853,13 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //   Switch: '<S37>/Switch'
 
     if (rtb_LowerRelop1_i) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n =
         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.max_vel_xy;
     } else {
-      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f <
+      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n <
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3) {
         // Switch: '<S37>/Switch'
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n =
           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3;
       }
     }
@@ -3778,7 +4873,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //   Add in CPU
 
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_o =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f -
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n -
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k;
 
     // RelationalOperator: '<S40>/LowerRelop1'
@@ -4019,106 +5114,106 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[2] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[3] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[4] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[5] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[6] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[7] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[8] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[9] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[10] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[9] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[10] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[11] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[12] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[13] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_d) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[14] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_d) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[15] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[16] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[17] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[18] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[19] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[20] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[21] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[22] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[23] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5;
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[24] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[25] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[26] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[27] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[28] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[29] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[30] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[31] = 0.0;
@@ -4128,97 +5223,98 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[34] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[35] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a -
+    1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[36] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l - 1.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp - 1.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[37] =
     ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e) -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp) -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[38] =
     ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e) +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp) +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[39] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h) -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
+    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[40] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_a
-      + ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_e +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h) +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[41] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp) -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et) -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[42] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp) +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et) +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[43] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h)
-     - ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h) -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[44] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_h)
-     + ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_h) +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
 
   // Product: '<S42>/Product3' incorporates:
   //   SignalConversion: '<S42>/TmpSignal ConversionAtProduct3Inport2'
   //   Sum: '<S12>/Sum'
 
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 15;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv1[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 15;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv1[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
       =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
       + 30] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DifferenceInputs2_g +
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
        + 15] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DifferenceInputs2_l +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
        * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DifferenceInputs2);
   }
 
   // End of Product: '<S42>/Product3'
 
   // Product: '<S82>/Product9' incorporates:
-  //   Constant: '<Root>/Constant'
+  //   Constant: '<Root>/Constant1'
   //   Sum: '<S12>/Sum'
 
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
       = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv1[7 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] -
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k])
-      * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k];
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] -
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0])
+      * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
   }
 
   // End of Product: '<S82>/Product9'
@@ -4279,7 +5375,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Operator: reciprocal
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime_i = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_nr +
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_n +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2);
 
   // DiscreteTransferFcn: '<S98>/Filter Differentiator TF' incorporates:
@@ -4303,7 +5399,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_o -
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_nr) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_n) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime_i *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_states;
 
@@ -4404,26 +5500,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S97>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
     // DataTypeConversion: '<S97>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 > 0.0) {
     // DataTypeConversion: '<S97>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 == 0.0) {
     // DataTypeConversion: '<S97>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S97>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S97>/SignPreIntegrator'
 
   // DataTypeConversion: '<S97>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S97>/DataTypeConv1'
@@ -4441,10 +5537,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S97>/AND'
   //   RelationalOperator: '<S97>/Equal'
 
-  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_e =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_j;
   } else {
@@ -4462,11 +5559,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_e;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_l =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE;
 
   // End of DiscreteIntegrator: '<S96>/Integrator'
@@ -4503,12 +5600,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S93>/Constant2'
   //   Product: '<S99>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_i *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_m);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_j =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_l;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -4789,26 +5886,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S107>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S107>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S107>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S107>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S107>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S107>/SignPreIntegrator'
 
   // DataTypeConversion: '<S107>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S107>/DataTypeConv1'
@@ -4826,10 +5923,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S107>/AND'
   //   RelationalOperator: '<S107>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_k;
   } else {
@@ -4847,11 +5945,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC_bi;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_a *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_b;
 
   // End of DiscreteIntegrator: '<S106>/Integrator'
@@ -4888,12 +5986,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S103>/Constant2'
   //   Product: '<S109>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_g *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_c);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_f;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -4972,7 +6070,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain1_g +
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime_d +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f);
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n);
 
   // Sum: '<S104>/Sum' incorporates:
   //   UnitDelay: '<S104>/Unit Delay'
@@ -5075,7 +6173,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_h;
 
   // Gain: '<S117>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_n *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -5095,9 +6193,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S117>/DeadZone'
 
   // RelationalOperator: '<S117>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S117>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
@@ -5130,26 +6227,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S117>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S117>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S117>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S117>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S117>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S117>/SignPreIntegrator'
 
   // DataTypeConversion: '<S117>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S117>/DataTypeConv1'
@@ -5167,14 +6264,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S117>/AND'
   //   RelationalOperator: '<S117>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gw;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -5188,11 +6286,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC_a;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_c *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_o;
 
   // End of DiscreteIntegrator: '<S116>/Integrator'
@@ -5229,12 +6327,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S113>/Constant2'
   //   Product: '<S119>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_m *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_n);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_fl;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -5387,7 +6485,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_PrevZCX.FilterDifferentiatorTF_Reset__k
     = rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_f -
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 -
@@ -5402,8 +6500,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCoe_p[
-     0] *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n +
+     0] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCoe_p[
      1] *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_gl)
@@ -5417,7 +6514,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_oj;
 
   // Gain: '<S127>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_k *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -5437,9 +6534,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S127>/DeadZone'
 
   // RelationalOperator: '<S127>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S127>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
@@ -5472,26 +6568,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S127>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S127>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S127>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S127>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S127>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S127>/SignPreIntegrator'
 
   // DataTypeConversion: '<S127>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S127>/DataTypeConv1'
@@ -5509,14 +6605,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S127>/AND'
   //   RelationalOperator: '<S127>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_oi;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -5530,11 +6627,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC_h;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_k *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_k;
 
   // End of DiscreteIntegrator: '<S126>/Integrator'
@@ -5759,7 +6856,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_j;
 
   // Gain: '<S137>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_h *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -5779,9 +6876,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S137>/DeadZone'
 
   // RelationalOperator: '<S137>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S137>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
@@ -5814,26 +6910,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S137>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S137>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S137>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S137>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S137>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S137>/SignPreIntegrator'
 
   // DataTypeConversion: '<S137>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S137>/DataTypeConv1'
@@ -5851,14 +6947,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S137>/AND'
   //   RelationalOperator: '<S137>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_op;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -5874,7 +6971,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_f_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_bp *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_f =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_f_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_h;
@@ -6101,7 +7198,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_f;
 
   // Gain: '<S147>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_l *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -6121,9 +7218,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S147>/DeadZone'
 
   // RelationalOperator: '<S147>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S147>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
@@ -6156,26 +7252,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S147>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S147>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S147>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S147>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S147>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S147>/SignPreIntegrator'
 
   // DataTypeConversion: '<S147>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S147>/DataTypeConv1'
@@ -6193,14 +7289,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S147>/AND'
   //   RelationalOperator: '<S147>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_bu;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -6216,7 +7313,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_m0_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_n *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_m0 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_m0_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_ji;
@@ -6443,7 +7540,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_b;
 
   // Gain: '<S157>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_e *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -6463,9 +7560,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S157>/DeadZone'
 
   // RelationalOperator: '<S157>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S157>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
@@ -6498,26 +7594,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S157>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S157>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S157>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S157>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S157>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S157>/SignPreIntegrator'
 
   // DataTypeConversion: '<S157>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S157>/DataTypeConv1'
@@ -6535,14 +7631,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S157>/AND'
   //   RelationalOperator: '<S157>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gf;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -6558,7 +7655,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_g_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_l *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_g =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_DOut_g_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_m;
@@ -6839,26 +7936,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S167>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S167>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S167>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S167>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S167>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S167>/SignPreIntegrator'
 
   // DataTypeConversion: '<S167>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S167>/DataTypeConv1'
@@ -6876,10 +7973,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S167>/AND'
   //   RelationalOperator: '<S167>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.I_freq_hz =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gh;
   } else {
@@ -7037,270 +8135,270 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter11_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter12_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter13_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter14_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter11_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter12_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter13_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter14_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d2 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter15_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d3 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d4 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d1 * 0.5;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 1.0 /
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter16_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d5 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d6 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 * 0.5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter16_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 = 1.0 /
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter17_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d7 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d8 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 * 0.5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d5 * 0.5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[0] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[1] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[2] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[3] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[4] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[5] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[6] =
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[7] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[8] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[9] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[10] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[9] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[10] =
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[11] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d2) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[12] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d2) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[13] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d6) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[14] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41) *
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 -
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d6) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[15] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[16] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[17] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[18] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[19] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[20] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[21] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[22] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[23] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[24] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 * 0.5) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[25] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[26] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 * 0.5) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 * 0.5) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[27] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[28] =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 * 0.5) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[29] =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 * 0.5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 0.5 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[30] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[31] = 0.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[32] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[33] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[34] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[35] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d1 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[36] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 - 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d5 - 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[37] =
     ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22) -
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp) -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[38] =
     ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22) +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp) +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4) *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[39] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8) -
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p) -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1) *
-    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f) *
+    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[40] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8) +
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p) +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[41] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33) -
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d3 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d4) -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[42] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33) +
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d3 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d4) +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[43] =
-    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38) -
+    ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d7 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d8) -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) *
     -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[44] =
-    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42 +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38) +
+    ((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d7 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d8) +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp) *
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 15;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 15;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[1 + 3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
       + 15];
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[2 + 3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gl[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
       + 30];
   }
 
@@ -7394,327 +8492,380 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
        &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.a_jp);
   }
 
-  // MATLAB Function: '<S2>/Jqwl_matrix' incorporates:
+  // MATLAB Function: '<S2>/Jqwl_numeric' incorporates:
+  //   Constant: '<Root>/Constant1'
   //   SignalConversion: '<S13>/TmpSignal ConversionAt SFunction Inport1'
+  //   Sum: '<S43>/Sum'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 = 1.0 /
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t39 = 1.0 /
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t48 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t49 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t50 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[0]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[1]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m *=
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[2]
-    = (((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26) * -0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter11_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[3]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t4 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[4]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[5]
-    = (((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter12_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[6]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[7]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[8]
-    = (((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32) -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33) * -0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter13_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[9]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[10]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[11]
-    = (((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32) +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter14_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[12]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[13]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[14]
-    = (((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38) -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40) * -0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter15_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[15]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[16]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[17]
-    = (((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t41 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t42) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38) +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter16_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[18]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 * 2.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[19]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[20]
-    = (((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t48 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t49) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t50) -
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t39) * -0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter17_o1 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[21]
-    =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 -
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18) * 0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[22]
-    = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t9 +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g *
-    0.125;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k[23]
-    = (((-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t48 +
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t49) +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t50) +
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) *
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_g
-     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t39) * 0.125;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 3;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    // Product: '<S2>/Product3'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
-      = 0.0;
-    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
-        +=
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-        [3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 +
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_k[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter3_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter4_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[2] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter5_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[3] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter6_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[4] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter7_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[5] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter8_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[6] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter9_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[7] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter10_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter11_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[2] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter12_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[3] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter13_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[4] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter14_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[5] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter15_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[6] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter16_o1;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[7] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter17_o1;
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[0], 0, 24U * sizeof
+         (real_T));
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol < 4;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TmpSignalConversionAtFilterDiff
+      [0] = 1.0 /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol
+      << 1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TmpSignalConversionAtFilterDiff
+      [1] = 1.0 / ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_w
+      [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol << 1) + 1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[0] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[1] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[2] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[3] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = cos
+      (-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = sin
+      (-ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[2] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[1] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[3] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[0] = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[2] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[4] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9
+      [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol << 1) + 1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[1] = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[3] = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[5] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol
+      << 1];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv5[0] = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv5[2] =
+      -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 / (2.0 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv5[1] = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv5[3] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter2_o1 / (2.0 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.GetParameter1_o1);
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 2;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 1)] =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.TmpSignalConversionAtFilterDiff
+        [ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 3;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv3[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 1)] = 0.0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv3[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 1)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          << 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv3[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 1)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 1) + 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv4[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + 2];
+      }
     }
 
-    // End of Product: '<S2>/Product3'
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 2;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 3;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 1)] = 0.0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 1)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv3[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          << 1];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 1)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv3
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 1) + 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv5[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          + 2];
+      }
+    }
 
-    // Sum: '<S43>/Sum'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
-      -=
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k];
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = ((1 +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol) << 1) - 2;
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 2;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar < 3;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j +
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0) +
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar << 3)] = 0.0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j +
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0) +
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar << 3)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar
+          << 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j +
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0) +
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar << 3)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv2
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar << 1) + 1] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + 2];
+      }
+    }
   }
 
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M[0], 0, sizeof(real_T) <<
+         6U);
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+      + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 3)] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+  }
+
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 3;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 8;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3)] = 0.0;
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar < 8;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3)] +=
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar << 3) +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j] *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G
+          [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3) +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar];
+      }
+    }
+  }
+
+  rtb_NotEqual_l2 = true;
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol < 24;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]
+      = 0.0;
+    rtb_NotEqual_l2 = (rtb_NotEqual_l2 && ((!rtIsInf
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]))
+      && (!rtIsNaN
+          (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]))));
+  }
+
+  if (!rtb_NotEqual_l2) {
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 24;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+        = (rtNaN);
+    }
+  } else {
+    ROPOD_4Wheel_Tdistkinb_cntr_svd
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y,
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_k,
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff,
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i = fabs
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[0]);
+    if ((!rtIsInf(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i)) &&
+        (!rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i))) {
+      if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i <=
+          2.2250738585072014E-308) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i =
+          4.94065645841247E-324;
+      } else {
+        frexp(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i,
+              &ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o);
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i = ldexp(1.0,
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o - 53);
+      }
+    } else {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i = (rtNaN);
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *= 8.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o = 0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 1;
+    while ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol < 4) &&
+           (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol
+            - 1] > ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o++;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol++;
+    }
+
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o > 0) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 1;
+      while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j <=
+             ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i = 1.0 /
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j
+          - 1];
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol;
+        while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar + 1 <=
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol + 3) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar]
+            *= ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar++;
+        }
+
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol += 3;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++;
+      }
+
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol <= 22;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol += 3) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol;
+        while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j + 1 <=
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol + 3) {
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j]
+            = 0.0;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++;
+        }
+      }
+
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = -1;
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j <= 22;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j += 3) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar = 0;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol++;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_n =
+          (((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o - 1) << 3) +
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol) + 1;
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ib =
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol;
+        while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ib + 1 <=
+               ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_n) {
+          if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_k[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ib]
+              != 0.0) {
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia =
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar;
+            ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_ic =
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j;
+            while (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_ic + 1 <=
+                   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j + 3) {
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia++;
+              for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+                   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+                   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[1 + 3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 + 1];
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[2 + 3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 + 2];
+              }
+
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_ic]
+                =
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ia
+                - 1] *
+                ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.U_k[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ib]
+                + ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.y[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_ic];
+              ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.b_ic++;
+            }
+          }
+
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar += 3;
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ib += 8;
+        }
+      }
+    }
+  }
+
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+      = 0.0;
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 8;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+        += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M
+        [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 3) +
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+    }
+  }
+
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 3;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+      = 0.0;
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 8;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+        += ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j +
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product9[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
+    }
+
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
+      -=
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
+  }
+
+  // End of MATLAB Function: '<S2>/Jqwl_numeric'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
     // Start for MATLABSystem: '<S6>/Get Parameter'
@@ -7822,7 +8973,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t5;
 
   // Gain: '<S56>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_hq *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
 
@@ -7843,7 +8994,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // RelationalOperator: '<S56>/NotEqual'
   rtb_LowerRelop1 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 !=
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f !=
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24);
 
   // Signum: '<S56>/SignDeltaU'
@@ -7899,26 +9050,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S56>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 < 0.0) {
     // DataTypeConversion: '<S56>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 > 0.0) {
     // DataTypeConversion: '<S56>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2 == 0.0) {
     // DataTypeConversion: '<S56>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S56>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S56>/SignPreIntegrator'
 
   // DataTypeConversion: '<S56>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S56>/DataTypeConv1'
@@ -7936,14 +9087,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S56>/AND'
   //   RelationalOperator: '<S56>/Equal'
 
-  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 =
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_ah;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t2;
   }
 
@@ -7957,10 +9109,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC_m;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 *=
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f *=
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_gb;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_mx;
 
   // End of DiscreteIntegrator: '<S55>/Integrator'
@@ -7997,12 +9149,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S52>/Constant2'
   //   Product: '<S58>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_k3 *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_ny);
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_jf;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -8229,7 +9381,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
 
   // Gain: '<S66>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_d *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LPF_fhz_n;
 
@@ -8249,9 +9401,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of DeadZone: '<S66>/DeadZone'
 
   // RelationalOperator: '<S66>/NotEqual'
-  rtb_NotEqual_l2 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LPF_fhz_n);
+  rtb_NotEqual_l2 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LPF_fhz_n);
 
   // Signum: '<S66>/SignDeltaU'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LPF_fhz_n < 0.0) {
@@ -8284,26 +9435,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S66>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
     // DataTypeConversion: '<S66>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 > 0.0) {
     // DataTypeConversion: '<S66>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 == 0.0) {
     // DataTypeConversion: '<S66>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S66>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S66>/SignPreIntegrator'
 
   // DataTypeConversion: '<S66>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S66>/DataTypeConv1'
@@ -8321,10 +9472,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S66>/AND'
   //   RelationalOperator: '<S66>/Equal'
 
-  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
+  if (rtb_NotEqual_l2 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.I_freq_hz_e =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_nd;
   } else {
@@ -8344,7 +9496,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.I_freq_hz_e *=
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_kx;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.I_freq_hz_e +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_c5;
 
@@ -8353,7 +9505,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Sum: '<S65>/Sum'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m) +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27) +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11;
 
   // Saturate: '<S65>/Saturate'
@@ -8382,12 +9534,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S62>/Constant2'
   //   Product: '<S68>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_ci *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_c5);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 +
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_p;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -8466,7 +9618,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain1_jx +
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t11 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15);
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32);
 
   // Sum: '<S63>/Sum' incorporates:
   //   UnitDelay: '<S63>/Unit Delay'
@@ -8552,7 +9704,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //  About '<S77>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant5_Value_ba *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.TSamp_WtEt_gy;
 
@@ -8563,9 +9715,9 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //  About '<S77>/Reciprocal':
   //   Operator: reciprocal
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 = 1.0 /
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gy +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17);
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35);
 
   // DiscreteTransferFcn: '<S77>/Filter Differentiator TF' incorporates:
   //   Constant: '<S71>/Constant'
@@ -8585,12 +9737,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_PrevZCX.FilterDifferentiatorTF_Reset__g
     = rtb_Compare;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gl -
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_gy) *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_ei;
 
   // Product: '<S77>/NOut' incorporates:
@@ -8598,55 +9750,54 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   DiscreteTransferFcn: '<S77>/Filter Differentiator TF'
   //   Product: '<S77>/DenCoefOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCo_it[
-     0] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3 +
+     0] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16 +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCo_it[
      1] *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_ei)
-    * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 *
+    * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant5_Value_ba;
 
   // Sum: '<S75>/Sum Fdbk'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_d) +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
 
   // Gain: '<S76>/ZeroGain'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.ZeroGain_Gain_f *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
 
   // DeadZone: '<S76>/DeadZone'
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 >
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 >
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.max_ropod_sw_tau) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -=
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 -=
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.max_ropod_sw_tau;
-  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 >=
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 >=
              -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.max_ropod_sw_tau) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -=
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 -=
       -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.max_ropod_sw_tau;
   }
 
   // End of DeadZone: '<S76>/DeadZone'
 
   // RelationalOperator: '<S76>/NotEqual'
-  rtb_LowerRelop1 =
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 !=
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17);
+  rtb_LowerRelop1 = (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 !=
+                     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35);
 
   // Signum: '<S76>/SignDeltaU'
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 < 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = -1.0;
-  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 > 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = 1.0;
-  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 == 0.0) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = 0.0;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 < 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = -1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 > 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 1.0;
+  } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 == 0.0) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 = (rtNaN);
   }
 
   // End of Signum: '<S76>/SignDeltaU'
@@ -8691,31 +9842,31 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Signum: '<S76>/SignPreIntegrator'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 < 0.0) {
     // DataTypeConversion: '<S76>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = -1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = -1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 > 0.0) {
     // DataTypeConversion: '<S76>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 1.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 1.0;
   } else if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 == 0.0) {
     // DataTypeConversion: '<S76>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
     // DataTypeConversion: '<S76>/DataTypeConv2'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = (rtNaN);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = (rtNaN);
   }
 
   // End of Signum: '<S76>/SignPreIntegrator'
 
   // DataTypeConversion: '<S76>/DataTypeConv2'
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 256.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 256.0);
   }
 
   // DataTypeConversion: '<S76>/DataTypeConv1'
-  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 < 128.0) {
-    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17;
+  if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 < 128.0) {
+    t2 = (int8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35;
   } else {
     t2 = MAX_int8_T;
   }
@@ -8728,14 +9879,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Logic: '<S76>/AND'
   //   RelationalOperator: '<S76>/Equal'
 
-  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-        ? (int32_T)(int8_T)-(int8_T)(uint8_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(int8_T)
-        (uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) == t2)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
+  if (rtb_LowerRelop1 && ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+        < 0.0 ? (int32_T)(int8_T)-(int8_T)(uint8_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (int8_T)(uint8_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ==
+       t2)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_om;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 =
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24;
   }
 
@@ -8749,11 +9901,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_IC_c;
   }
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_gs *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_d;
 
   // End of DiscreteIntegrator: '<S75>/Integrator'
@@ -8761,8 +9913,8 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Sum: '<S75>/Sum'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0) +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18;
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19) +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
 
   // Saturate: '<S75>/Saturate'
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n >
@@ -8782,7 +9934,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Product: '<S78>/POut' incorporates:
   //   Constant: '<S72>/Constant4'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant4_Value_ci;
 
@@ -8790,12 +9942,12 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S72>/Constant2'
   //   Product: '<S78>/IOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Integrator_gainval_cd *
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n *
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant2_Value_i);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 +
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_os;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -8878,7 +10030,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //  About '<S79>/TSamp':
   //   y = u * K where K = ( w * Ts )
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain1_a *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.TSamp_WtEt_oh;
 
@@ -8891,7 +10043,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n = 1.0 /
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_e5 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17);
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35);
 
   // DiscreteTransferFcn: '<S79>/Filter Differentiator TF' incorporates:
   //   Constant: '<S79>/Constant'
@@ -8900,7 +10052,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i -
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 -
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 -
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_e5) *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_states_p;
@@ -8911,7 +10063,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Product: '<S79>/DenCoefOut'
   //   Product: '<S79>/NOut'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 =
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCoe_b[
      0] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t24 +
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.FilterDifferentiatorTF_NumCoe_b[
@@ -8919,14 +10071,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_states_p)
     * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain1_a +
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 +
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26);
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 +
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23);
 
   // Sum: '<S73>/Sum' incorporates:
   //   UnitDelay: '<S73>/Unit Delay'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18 +
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.UnitDelay_DSTATE_f;
 
   // Sum: '<S43>/Sum1' incorporates:
@@ -8944,7 +10096,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain1_iu;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[2] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.g_bl *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain2_m2;
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -8978,114 +10130,113 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   }
 
   // MATLAB Function: '<S44>/platform_forces_2_tau_dist_optimal' incorporates:
-  //   Constant: '<Root>/Constant'
+  //   Constant: '<Root>/Constant1'
 
   memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K[0], 0, sizeof(int16_T) <<
          6U);
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
-      + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k << 3)] = 1;
-    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol
+      + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol << 3)] = 1;
+    if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_n[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]
         == 0.0) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
-        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k << 3)] = 1000;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol
+        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol << 3)] = 1000;
     }
   }
 
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.P[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
-        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3)] = 0.0;
-      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 = 0;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 < 8;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.P[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
-          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3)] += (real_T)
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 8;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+        + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 3)] = 0.0;
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar < 8;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
+          + (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 3)] += (real_T)
           (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K
-           [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k << 3) +
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1] *
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K
            [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 << 3) +
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1]);
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar] *
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.K
+           [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j << 3) +
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar]);
       }
     }
   }
 
-  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[0], 0, 9U * sizeof
+  memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[0], 0, 9U * sizeof
          (real_T));
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[8] =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[8] =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3_g *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3_g * 8.0;
   memset(&ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Linv[0], 0, 81U * sizeof
          (real_T));
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Linv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
-      + 9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] = 1.0 /
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.P
-      [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k << 3) +
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k];
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Linv[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o
+      + 9 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o] = 1.0 /
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.M
+      [(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o << 3) +
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.r_o];
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Linv[80] = 1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[8] = -1.0;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[17] = 0.0;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
       = -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3_g;
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
       + 9] = -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gain3_g;
 
     // MATLAB Function: '<S44>/Gl_matrices'
-    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 3;
-         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_tmp =
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 + 3 *
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k;
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-        [ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_tmp] = 0.0;
-      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 = 0;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 < 15;
-           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1++) {
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-          [ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_tmp] =
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[3 *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1 +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] * (real_T)b[15 *
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i1] +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-          [3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
+    for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j = 0;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j < 3;
+         ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j++) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol =
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j + 3 *
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0;
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]
+        = 0.0;
+      for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar = 0;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar < 15;
+           ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar++) {
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.vcol]
+          = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Gtl[3 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j] * (real_T)b[15 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.ar] +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 +
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.c_j];
       }
     }
   }
 
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 8;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 8;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_m[3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-      [3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0];
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_m[1 + 3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-      [3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k + 1];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 + 1];
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_m[2 + 3 *
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k] =
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_TmpSignalConversionAtSFun_k
-      [3 * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k + 2];
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0] =
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.G[3 *
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 + 2];
   }
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_m[24] =
@@ -9096,7 +10247,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[2];
   ROPOD_4Wheel_Tdistk_mpcqpsolver
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Linv,
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f,
+     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V,
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.dv0,
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Gtl_m,
      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp,
@@ -9189,28 +10340,28 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     // DataTypeConversion: '<S21>/Data Type Conversion6' incorporates:
     //   Constant: '<S21>/Constant3'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.SW_COM1_ENABLE1);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ||
+        rtIsInf(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 65536.0);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 65536.0);
     }
 
     // DataTypeConversion: '<S21>/Data Type Conversion4' incorporates:
     //   MATLABSystem: '<S8>/Get Parameter'
     //   MATLABSystem: '<S8>/Get Parameter'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0) || rtIsInf
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = fmod
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31, 65536.0);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = fmod
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0, 65536.0);
     }
 
     // S-Function (sfix_bitop): '<S21>/Bitwise Operator1' incorporates:
@@ -9218,26 +10369,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //   DataTypeConversion: '<S21>/Data Type Conversion6'
 
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BitwiseOperator1 = (uint16_T)
-      ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0 ? (int32_T)
+      ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l < 0.0 ? (int32_T)
         (uint16_T)-(int16_T)(uint16_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) &
-       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 < 0.0 ? (int32_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (uint16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) &
+       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 < 0.0 ? (int32_T)
         (uint16_T)-(int16_T)(uint16_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31));
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 : (int32_T)(uint16_T)
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0));
 
     // DataTypeConversion: '<S21>/Data Type Conversion7' incorporates:
     //   Constant: '<S21>/Constant4'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.SW_COM1_ENABLE2);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) ||
+        rtIsInf(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 65536.0);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 65536.0);
     }
 
     // DataTypeConversion: '<S21>/Data Type Conversion5' incorporates:
@@ -9245,15 +10396,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //   MATLABSystem: '<S8>/Get Parameter'
     //   MATLABSystem: '<S8>/Get Parameter'
 
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = floor
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = floor
       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.shift_Gain *
        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i);
-    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) || rtIsInf
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31)) {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = 0.0;
+    if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0) || rtIsInf
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0)) {
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = 0.0;
     } else {
-      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = fmod
-        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31, 65536.0);
+      ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = fmod
+        (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0, 65536.0);
     }
 
     // S-Function (sfix_bitop): '<S21>/Bitwise Operator2' incorporates:
@@ -9261,14 +10412,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     //   DataTypeConversion: '<S21>/Data Type Conversion7'
 
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BitwiseOperator2 = (uint16_T)
-      ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0 ? (int32_T)
+      ((ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l < 0.0 ? (int32_T)
         (uint16_T)-(int16_T)(uint16_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) &
-       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 < 0.0 ? (int32_T)
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+        (uint16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) &
+       (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 < 0.0 ? (int32_T)
         (uint16_T)-(int16_T)(uint16_T)
-        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 : (int32_T)(uint16_T)
-        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31));
+        -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 : (int32_T)(uint16_T)
+        ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0));
 
     // Gain: '<S21>/Gain'
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.limit1_p =
@@ -9328,26 +10479,26 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // End of Switch: '<S19>/Switch'
 
   // DataTypeConversion: '<S21>/Data Type Conversion2'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = floor
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = floor
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n);
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25) || rtIsInf
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l) || rtIsInf
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25, 65536.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l, 65536.0);
   }
 
   // DataTypeConversion: '<S21>/Data Type Conversion3' incorporates:
   //   Constant: '<S21>/Constant11'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = 0.0 *
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = 0.0 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.SW_COM1_USE_TS;
-  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31)) {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = 0.0;
+  if (rtIsNaN(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0)) {
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = 0.0;
   } else {
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = fmod
-      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31, 65536.0);
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = fmod
+      (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0, 65536.0);
   }
 
   // Gain: '<S21>/Gain10' incorporates:
@@ -9359,11 +10510,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ((uint16_T)((uint16_T)
                 (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BitwiseOperator1 |
                  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BitwiseOperator2) |
-                (uint16_T)(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 < 0.0
-       ? (int32_T)(uint16_T)-(int16_T)(uint16_T)
-       -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 : (int32_T)(uint16_T)
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25)) | (uint16_T)
-     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31) * ((real_T)
+                (uint16_T)(ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l
+       < 0.0 ? (int32_T)(uint16_T)-(int16_T)(uint16_T)
+       -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l : (int32_T)
+       (uint16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l)) |
+     (uint16_T)ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0) * ((real_T)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Gain10_Gain * 3.0517578125E-5);
   if (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_M->Timing.TaskCounters.TID[2] ==
       0) {
@@ -9479,13 +10630,13 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   Constant: '<S3>/Constant1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[0] = sin
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_n / 2.0);
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_nl / 2.0);
 
   // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S3>/Constant1'
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i = cos
-    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_n / 2.0);
+    (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant1_Value_nl / 2.0);
 
   // MATLABSystem: '<S3>/Coordinate Transformation Conversion' incorporates:
   //   Constant: '<S3>/Constant2'
@@ -9503,7 +10654,7 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE
      [2] / 2.0);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 = sin
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE
      [2] / 2.0);
 
@@ -9524,10 +10675,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.Constant_Value_f2;
 
   // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.max_current;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 =
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[1];
 
@@ -9536,10 +10687,10 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   //   MATLABSystem: '<S3>/Coordinate Transformation Conversion'
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BusAssignment.Pose.Pose.Orientation.W
-    = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 *
+    = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n -
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p;
 
   // Start for MATLABSystem: '<S3>/Coordinate Transformation Conversion'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *=
@@ -9557,17 +10708,17 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.max_current *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BusAssignment.Pose.Pose.Orientation.Y
     = -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Sum_pp[0] *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.max_current *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Product1_i *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BusAssignment.Pose.Pose.Orientation.Z
-    = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 *
+    = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l *
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Sum_pp_p +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 *
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.LL_pole_fhz_n;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.BusAssignment.Twist.Twist.Linear.X
     = ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[0];
@@ -9698,14 +10849,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteIntegrator: '<S96>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_l;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S99>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_l =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_j;
 
   // Update for DiscreteTransferFcn: '<S100>/Filter Differentiator TF'
@@ -9727,15 +10878,15 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteIntegrator: '<S106>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_b =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t14_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.sampletime;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_b =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S109>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_f =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_f;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch1_n;
 
   // Update for DiscreteTransferFcn: '<S110>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_states_o =
@@ -9756,14 +10907,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteIntegrator: '<S116>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_o =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t33_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_et;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_d =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S119>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_fl =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t34_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t38_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Integrator_l;
 
   // Update for DiscreteTransferFcn: '<S120>/Filter Differentiator TF'
@@ -9781,11 +10932,11 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteTransferFcn: '<S128>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_gl =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_tmp_n;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Switch2_g;
 
   // Update for DiscreteIntegrator: '<S126>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_k =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Yk1_k +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.DOut_d;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_f =
     (int8_T)rtb_Compare;
@@ -9930,14 +11081,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteIntegrator: '<S55>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_mx =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_1 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_f +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t6;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_fn =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S58>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_jf =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_2 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8_tmp +
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t8;
 
   // Update for DiscreteTransferFcn: '<S59>/Filter Differentiator TF'
@@ -9960,14 +11111,14 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
   // Update for DiscreteIntegrator: '<S65>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_c5 =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.I_freq_hz_e +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.FilterDifferentiatorTF_m;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t27;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_o =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S68>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_p =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t22 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t32;
 
   // Update for DiscreteTransferFcn: '<S69>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_dl =
@@ -9984,19 +11135,19 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   // Update for DiscreteTransferFcn: '<S77>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_state_ei =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_3;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t16;
 
   // Update for DiscreteIntegrator: '<S75>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_d =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t10_tmp +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.rtb_Switch_idx_0;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t19;
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_PrevResetState_m =
     (int8_T)rtb_Compare;
 
   // Update for DiscreteIntegrator: '<S78>/Integrator'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.Integrator_DSTATE_os =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t30 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t26;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23_tmp +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t23;
 
   // Update for DiscreteTransferFcn: '<S79>/Filter Differentiator TF'
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.FilterDifferentiatorTF_states_p =
@@ -10008,43 +11159,43 @@ void ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_step(void)
 
   ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.UnitDelay_DSTATE_f =
     ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.a_cg *
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t17 +
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t18;
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t35 +
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t40;
 
   // MATLAB Function: '<S2>/pos_rot_matrix' incorporates:
   //   DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
 
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25 = cos
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l = cos
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE
      [2]);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[0] =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31 = sin
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[0] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0 = sin
     (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE
      [2]);
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[3] =
-    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[6] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[1] =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t31;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[4] =
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t25;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[7] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[2] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[5] = 0.0;
-  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[8] = 1.0;
-  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k = 0;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k < 3;
-       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k++) {
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[3] =
+    -ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[6] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[1] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.d0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[4] =
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.t15_tmp_l;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[7] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[2] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[5] = 0.0;
+  ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[8] = 1.0;
+  for (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 = 0;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0 < 3;
+       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0++) {
     // Update for DiscreteIntegrator: '<S2>/Discrete-Time Integrator'
-    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+    ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_DW.DiscreteTimeIntegrator_DSTATE[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
       +=
       ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_P.DiscreteTimeIntegrator_gainval
-      * (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+      * (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
          + 6] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[2] +
-         (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k
+         (ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0
           + 3] * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[1] +
-          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.f[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.k]
+          ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.V[ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.i0]
           * ROPOD_4Wheel_Tdistkinb_cntr_hosp_platform_B.Diff[0]));
   }
 
