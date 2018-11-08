@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'ROPOD_4Wheel_Tdistkinb_cntr'.
 //
-// Model version                  : 1.278
+// Model version                  : 1.280
 // Simulink Coder version         : 8.13 (R2017b) 24-Jul-2017
-// C/C++ source code generated on : Tue Sep 18 10:14:59 2018
+// C/C++ source code generated on : Thu Nov  8 14:04:36 2018
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Intel->x86-64 (Linux 64)
@@ -649,12 +649,6 @@ struct P_ROPOD_4Wheel_Tdistkinb_cntr_T_ {
 
   real_T SW_COM1_USE_TS;               // Variable: SW_COM1_USE_TS
                                        //  Referenced by: '<S22>/Constant11'
-
-  real_T Taucompfactor;                // Variable: Taucompfactor
-                                       //  Referenced by:
-                                       //    '<S22>/Gain20'
-                                       //    '<S27>/Gain1'
-                                       //    '<S27>/Gain2'
 
   real_T Tinit;                        // Variable: Tinit
                                        //  Referenced by: '<S1>/Constant'
